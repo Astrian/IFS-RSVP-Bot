@@ -1,5 +1,6 @@
 module.exports = async function (id) {
   let ifslist = JSON.parse(process.env.IFS_INFO)
+  console.log(ifslist)
   for (let i in ifslist) {
     let faction = ''
     if (config.ifs[i].enlpoc === id) {
