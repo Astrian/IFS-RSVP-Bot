@@ -20,15 +20,15 @@
 
 在 Bases 中，点击「Add a workspace」来新建一个工作空间，你可以任意定名你的工作空间。
 
-![新工作空间示例](https://imgur.com/VjKJ0et)
+![新工作空间示例](https://i.imgur.com/VjKJ0et.png)
 
 在 Bases 中的「IFS Base Sample」空间中，点击「Base Sample」右下角的箭头，选择「Duplicate base」，然后在 Choose workspace 中找到你刚才新建的工作空间。切记关闭「Duplicate records」选项。
 
-![复制 Base](https://imgur.com/a/qc6zXrX)
+![复制 Base](https://i.imgur.com/a/qc6zXrX.png)
 
 进入你刚才复制的 Base 中。给表格改个名字，改成 IFS 所在地区的名字。如果你所在城市有多场 IFS，那么可以选择「Duplicate table」，并用相同方式，为新表改名为另一个地区的名字。
 
-![改名字](https://imgur.com/a/7b9pT8W)
+![改名字](https://i.imgur.com/a/7b9pT8W.png)
 
 在表中登记 agents 信息。只需要登记特工代号和阵营即可。
 
@@ -38,7 +38,7 @@
 
 按照下图，找到你的 base 的 ID（右侧选中部分）。保留好。
 
-![获取 Base ID](https://imgur.com/a/Zcu3x4E)
+![获取 Base ID](https://i.imgur.com/a/Zcu3x4E.png)
 
 ## 准备 Telegram bot
 
