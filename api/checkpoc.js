@@ -1,5 +1,5 @@
 module.exports = async function (id) {
-  let ifslist = JSON.parse(process.env.AIRTABLE_TOKEN)
+  let ifslist = JSON.parse(process.env.IFS_INFO)
   for (let i in ifslist) {
     let faction = ''
     if (config.ifs[i].enlpoc === id) {
