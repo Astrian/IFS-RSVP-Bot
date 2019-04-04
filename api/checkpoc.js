@@ -1,11 +1,12 @@
+const debug = require('debug')('rsvpbot:api/checkpoc.js')
+
 module.exports = async function (id) {
   let ifs = JSON.parse(process.env.IFS_INFO)
-  console.log(ifs)
   for (let i in ifs) {
     let faction = ''
-    if (ifs[i].enlpoc === id) {
+    if (ifs[i].enlpoc.indexOf(id) !== -1) {
       faction = 'ENL'
-    } else if (ifs[i].respoc === id) {
+    } else if (ifs[i].respoc.indexOf(id) !== -1) {
       faction = 'RES'
     }
     if (faction !== '') return { faction, location: ifs[i].location}
