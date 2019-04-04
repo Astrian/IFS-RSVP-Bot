@@ -59,7 +59,7 @@
 - `RANDOM_ADDRESS`：以 `/` 开头，然后随便输入一些符合 URL 规范的字符串。
 - `TELEGRAM_TOKEN`：BotFather 给你的 bot token。
 
-`RANDOM_ADDRESS` 的示例如下：
+`IFS_INFO` 的示例如下：
 
 ```
 [{"location":"南海","enlpoc":123456,"respoc":789012}]
