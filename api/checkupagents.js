@@ -1,9 +1,8 @@
 // Import Airtable API and config
 const Airtable = require('airtable');
-const config = require('../config.json')
 
 // Import RSVP base
-const base = new Airtable({apiKey: config.airtable.token}).base(config.airtable.base);
+const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
 
 module.exports = async function (faction, location, firstletter, direction) {
 

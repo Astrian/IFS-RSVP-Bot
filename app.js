@@ -4,9 +4,6 @@ const Telegram = require('telegraf/telegram')
 const express = require('express')
 const debug = require('debug')('rsvpbot:app.js')
 
-// Import configs
-const config = require('./config.json')
-
 // Import APIs
 const API = require('./api')
 
@@ -15,13 +12,13 @@ const expressApp = express()
 const PORT = process.env.PORT || 5000
 
 // Initial Telegram bot
-const telegrafbot = new Telegraf(config.telegram.token)
-const telegrambot = new Telegram(config.telegram.token, {
+const telegrafbot = new Telegraf(process.env.TELEGRAM_TOKEN)
+const telegrambot = new Telegram(process.env.TELEGRAM_TOKEN, {
   agent: null,
   webhookReply: true
 })
-expressApp.use(telegrafbot.webhookCallback(config.telegram.path))
-telegrafbot.telegram.setWebhook(config.telegram.domain + config.telegram.path)
+expressApp.use(telegrafbot.webhookCallback(process.env.RANDOM_ADDRESS))
+telegrafbot.telegram.setWebhook(process.env.DOMAIN + process.env.RANDOM_ADDRESS)
 
 // Bot commands
 telegrafbot.command('start', async (ctx) => {
