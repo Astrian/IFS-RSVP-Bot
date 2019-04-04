@@ -66,7 +66,7 @@
 ```
 
 ```
-[{"location":"天河","enlpoc":123456,"respoc":789012},{"location":"海珠","enlpoc":345678,"respoc":901234]
+[{"location":"天河","enlpoc":123456,"respoc":789012},{"location":"海珠","enlpoc":345678,"respoc":901234}]
 ```
 
 其中：
