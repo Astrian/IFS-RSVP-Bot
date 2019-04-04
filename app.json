@@ -1,0 +1,26 @@
+{
+  "name": "IFS-RSVP-Bot",
+  "buildpacks": [
+    { "url": "https://github.com/Astrian/IFS-RSVP-Bot.git" }
+  ],
+  "env": {
+    "TELEGRAM_TOKEN": {
+      "description": "在 Telegram 向 @BotFather 新建 bot 后，你获得的新 bot 密钥。形如：12345678:1234567890ABCDEFGabcdefg"
+    },
+    "DOMAIN": {
+      "description": "Heroku 实例的域名地址，普遍而言，它应该是 https://<上面填写的 app name>.herokuapp.com。切记使用 HTTPS 协议，最后不要带 /。"
+    },
+    "RANDOM_ADDRESS": {
+      "description": "随意在里面输入一些字符串（记得要符合 URL 规范）。这是用来避免你的 bot 被恶意访问的一个小小措施。务必以 / 开头。"
+    },
+    "AIRTABLE_TOKEN": {
+      "description": "你的 AirTable 账户 API 密钥，你可以在 https://airtable.com/account 获取到。"
+    },
+    "BASE_ID": {
+      "description": "对应 AirTable 库的 ID，你可以在对应库的 API 文档中获取到。"
+    },
+    "IFS_INFO": {
+      "description": "你的 IFS 场次 JSON。"
+    }
+  }
+}
