@@ -3,9 +3,9 @@ module.exports = async function (id) {
   console.log(ifslist)
   for (let i in ifslist) {
     let faction = ''
-    if (config.ifs[i].enlpoc === id) {
+    if (config.ifslist[i].enlpoc === id) {
       faction = 'ENL'
-    } else if (config.ifs[i].respoc === id) {
+    } else if (config.ifslist[i].respoc === id) {
       faction = 'RES'
     }
     if (faction !== '') return { faction, location: config.ifs[i].location}
