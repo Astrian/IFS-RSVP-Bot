@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/Astrian/IFS-RSVP-Bot/issues"
   },
-  "homepage": "https://github.com/Astrian/IFS-RSVP-Bot#readme"
+  "homepage": "https://github.com/Astrian/IFS-RSVP-Bot#readme",
+  "dependencies": {
+    "airtable": "^0.5.10",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "telegraf": "^3.28.0"
+  }
 }
