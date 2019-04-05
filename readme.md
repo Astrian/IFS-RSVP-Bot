@@ -62,18 +62,18 @@
 `IFS_INFO` 的示例如下：
 
 ```
-[{"location":"南海","enlpoc":123456,"respoc":789012}]
+[{"location":"南海","enlpoc":[123456,789012],"respoc":[345678,901234]}]
 ```
 
 ```
-[{"location":"天河","enlpoc":123456,"respoc":789012},{"location":"海珠","enlpoc":345678,"respoc":901234}]
+[{"location":"天河","enlpoc":[123456],"respoc":[789012]},{"location":"海珠","enlpoc":[345678],"respoc":[901234]}]
 ```
 
 其中：
 
 - `location` 字段要与上面你自己改的表格名字一样，否则 bot 无法读取是哪一场 IFS 活动的名单。
-- `enlpoc` 字段填写 ENL PoC 的 Telegram 数字 ID。
-- `respoc` 字段填写 RES PoC 的 Telegram 数字 ID。
+- `enlpoc` 字段填写 ENL PoC 的 Telegram 数字 ID，以数组包裹。
+- `respoc` 字段填写 RES PoC 的 Telegram 数字 ID，以数组包裹。
 
 ## TODO
 
