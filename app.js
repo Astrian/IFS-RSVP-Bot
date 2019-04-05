@@ -34,10 +34,10 @@ telegrafbot.command('checkin', async (ctx) => {
     let info = await API.checkpoc(ctx.message.from.id)
 
     // check up poc info and ap logging status
-    await API.checkapstatus(info.faction, info.location)
+    await API.checkapstatus(info.faction, info.location, ctx.message.from.id)
 
     // list all agents id first letter
-    let checkuplist = await API.checkupagents(info.faction, info.location, null, 'in')
+    let checkuplist = await API.checkupagents(info.faction, info.location, null, 'in', ctx.message.from.id)
 
     telegrambot.sendMessage(
       ctx.message.from.id,
@@ -60,10 +60,10 @@ telegrafbot.command('checkout', async (ctx) => {
     let info = await API.checkpoc(ctx.message.from.id)
 
     // check up poc info and ap logging status
-    await API.checkapstatus(info.faction, info.location)
+    await API.checkapstatus(info.faction, info.location, ctx.message.from.id)
 
     // list all agents id first letter
-    let checkuplist = await API.checkupagents(info.faction, info.location, null, 'out')
+    let checkuplist = await API.checkupagents(info.faction, info.location, null, 'out', ctx.message.from.id)
 
     telegrambot.sendMessage(
       ctx.message.from.id,
@@ -86,10 +86,7 @@ telegrafbot.command('cancelaprec', async (ctx) => {
     let info = await API.checkpoc(ctx.message.from.id)
 
     // check up poc info and ap logging status
-    await API.cancelaprec(info.faction, info.location)
-
-    // list all agents id first letter
-    let checkuplist = await API.cancelaprec(info.faction, info.location)
+    await API.cancelaprec(info.faction, info.location, ctx.message.from.id)
 
     telegrambot.sendMessage(
       ctx.message.from.id,
@@ -112,10 +109,10 @@ telegrafbot.on('callback_query', async (ctx) => {
       case 'findagent4in': {
         // check up poc info and ap logging status
         let info = await API.checkpoc(ctx.update.callback_query.from.id)
-        await API.checkapstatus(info.faction, info.location)
+        await API.checkapstatus(info.faction, info.location, ctx.update.callback_query.from.id)
 
         // check up agents of the ID start with the specific letter
-        let agentlist = await API.checkupagents(info.faction, info.location, (ctx.update.callback_query.data.split(':'))[1], 'in')
+        let agentlist = await API.checkupagents(info.faction, info.location, (ctx.update.callback_query.data.split(':'))[1], 'in', ctx.update.callback_query.from.id)
         console.log(agentlist)
 
         telegrambot.editMessageText(
@@ -135,10 +132,10 @@ telegrafbot.on('callback_query', async (ctx) => {
       case 'specificagent4in': {
         // check up poc info and ap logging status
         let info = await API.checkpoc(ctx.update.callback_query.from.id)
-        await API.checkapstatus(info.faction, info.location)
+        await API.checkapstatus(info.faction, info.location, ctx.update.callback_query.from.id)
 
         // log ap status
-        let agentname = await API.checkstatus(info.faction, info.location, (ctx.update.callback_query.data.split(':'))[1], 'in')
+        let agentname = await API.checkstatus(info.faction, info.location, (ctx.update.callback_query.data.split(':'))[1], 'in', ctx.update.callback_query.from.id)
 
         // edit message
         telegrambot.editMessageText(
@@ -160,10 +157,10 @@ telegrafbot.on('callback_query', async (ctx) => {
       case 'findagent4out': {
         // check up poc info and ap logging status
         let info = await API.checkpoc(ctx.update.callback_query.from.id)
-        await API.checkapstatus(info.faction, info.location)
+        await API.checkapstatus(info.faction, info.location, ctx.update.callback_query.from.id)
 
         // check up agents of the ID start with the specific letter
-        let agentlist = await API.checkupagents(info.faction, info.location, (ctx.update.callback_query.data.split(':'))[1], 'out')
+        let agentlist = await API.checkupagents(info.faction, info.location, (ctx.update.callback_query.data.split(':'))[1], 'out', ctx.update.callback_query.from.id)
         console.log(agentlist)
 
         telegrambot.editMessageText(
@@ -183,10 +180,10 @@ telegrafbot.on('callback_query', async (ctx) => {
       case 'specificagent4out': {
         // check up poc info and ap logging status
         let info = await API.checkpoc(ctx.update.callback_query.from.id)
-        await API.checkapstatus(info.faction, info.location)
+        await API.checkapstatus(info.faction, info.location, ctx.update.callback_query.from.id)
 
         // log ap status
-        let agentname = await API.checkstatus(info.faction, info.location, (ctx.update.callback_query.data.split(':'))[1], 'out')
+        let agentname = await API.checkstatus(info.faction, info.location, (ctx.update.callback_query.data.split(':'))[1], 'out', ctx.update.callback_query.from.id)
 
         // edit message
         telegrambot.editMessageText(
@@ -210,7 +207,7 @@ telegrafbot.on('callback_query', async (ctx) => {
         break
       }
       default: {
-        console.log(ctx.update.callback_query.data)
+        debug(ctx.update.callback_query.data)
         telegrambot.editMessageText(
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
@@ -223,7 +220,7 @@ telegrafbot.on('callback_query', async (ctx) => {
       }
     }
   } catch(e) {
-    console.log('error')
+    debug('error')
     telegrambot.editMessageText(
       ctx.update.callback_query.from.id,
       ctx.update.callback_query.message.message_id,
@@ -240,7 +237,7 @@ telegrafbot.on('callback_query', async (ctx) => {
 telegrafbot.hears(new RegExp(/\d{1,2},\d{1,}/), async (ctx) => {
   try {
     let info = await API.checkpoc(ctx.message.from.id)
-    await API.logaplevel(info.faction, info.location, (ctx.message.text.split(','))[0], (ctx.message.text.split(','))[1])
+    await API.logaplevel(info.faction, info.location, (ctx.message.text.split(','))[0], (ctx.message.text.split(','))[1], ctx.message.from.id)
     telegrambot.sendMessage(ctx.message.from.id, `签到/签退已完成。`, {parse_mode: "Markdown"})
   } catch (err) {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
