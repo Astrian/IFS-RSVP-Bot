@@ -80,3 +80,11 @@
 - ~~支援多个 PoC 进行操作~~（已经支持）
 - 快速登记 RSVP 信息
 - OCR 识别 agent AP/等级资料
+
+## License & Disclaimer
+
+MIT
+
+NOT NIANTIC OFFICAL PROGRAM.
+
+The texts, images and marks of Niantic / Ingress / First Saturday are trademarks of Niantic Inc., other trademarks are belong to their owner.
