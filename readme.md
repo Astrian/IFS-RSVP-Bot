@@ -85,6 +85,6 @@
 
 MIT
 
-NOT OFFICAL NIANTIC PROGRAM.
+NOT OFFICIAL NIANTIC PROGRAM.
 
 The texts, images and marks of Niantic / Ingress / First Saturday are trademarks of Niantic Inc., other trademarks are belong to their owner.
