@@ -1,10 +1,11 @@
 // Import Airtable API and config
+const debug = require('debug')('rsvpbot:api/checkupagents.js')
 const Airtable = require('airtable');
 
 // Import RSVP base
 const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
 
-module.exports = async function (faction, location, firstletter, direction) {
+module.exports = async function (faction, location, firstletter, direction, operator) {
 
   // get agents list
   let agentsbase = await base(location).select({
@@ -34,7 +35,6 @@ module.exports = async function (faction, location, firstletter, direction) {
     let agentlist = []
     agentsbase.forEach(record => {
       let agentnameinuppercase = record.get('特工代号').toUpperCase()
-      console.log(direction)
       if (agentnameinuppercase[0] === firstletter) {
         if (direction === 'in') {
           buttons[buttons.length] = [{
