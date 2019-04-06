@@ -237,7 +237,7 @@ telegrafbot.on('callback_query', async (ctx) => {
 telegrafbot.hears(new RegExp(/\d{1,2},\d{1,}/), async (ctx) => {
   try {
     let info = await API.checkpoc(ctx.message.from.id)
-    await API.logaplevel(info.faction, info.location, (ctx.message.text.split(','))[0], (ctx.message.text.split(','))[1], ctx.message.from.id)
+    await API.logaplevel(info.faction, info.location, (ctx.message.text.split(','))[0], (ctx.message.text.split(','))[1], (ctx.message.text.split(','))[2], ctx.message.from.id)
     telegrambot.sendMessage(ctx.message.from.id, `签到/签退已完成。`, {parse_mode: "Markdown"})
   } catch (err) {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
