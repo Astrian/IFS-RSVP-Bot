@@ -3,7 +3,7 @@ module.exports = {
   checkapstatus: require('./checkapstatus'),
   checkupagents: require('./checkupagents'),
   checkstatus: require('./checkstatus'),
-  logaplevel: require('./logaplevel'),
+  logdata: require('./logdata'),
   checkoutstatus: require('./checkoutstatus'),
   cancelaprec: require('./cancelaprec')
 }
