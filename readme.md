@@ -8,8 +8,9 @@
 目前拥有功能：
 
 - 一键部署至 Heroku
+- 快速从 FevGames 导入 RSVP 数据
 - 快速签到 / 签退
-- 登记玩家等级与 AP（经验值）
+- 登记玩家等级、AP（经验值）与 Trekker（步行里程）数据
 - 限定 PoC 访问 Bot，支持多 PoC 操作
 - 联动 Airtable 服务，快速根据 AP 差额生成全阵营榜单、独立阵营榜单，并可链接访问
 
@@ -77,10 +78,12 @@
 - `enlpoc` 字段填写 ENL PoC 的 Telegram 数字 ID，以数组包裹。
 - `respoc` 字段填写 RES PoC 的 Telegram 数字 ID，以数组包裹。
 
+接着，PoC 就可以尝试 `/start` 机器人，检查是否成功被机器人读取身份了。
+
 ## TODO
 
 - ~~支援多个 PoC 进行操作~~（已经支持）
-- 快速登记 RSVP 信息
+- ~~快速登记 RSVP 信息~~（已经支持）
 - OCR 识别 agent AP/等级资料
 
 ## License & Disclaimer
