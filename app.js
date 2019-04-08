@@ -135,6 +135,44 @@ telegrafbot.command('importrsvp', async (ctx) =>{
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
   }
 })
+telegrafbot.command('help', async (ctx) =>{
+  try {
+    let info = await API.checkpoc(ctx.message.from.id)
+
+    // check up poc info and ap logging status
+    await API.checkapstatus(info.faction, info.location, ctx.message.from.id)
+
+    let message = '需要帮助吗？这些链接可能可以帮到你。\n'
+    telegrambot.sendMessage(
+      ctx.message.from.id,
+      message,
+      {
+        parse_mode: "Markdown",
+        reply_markup: {
+          inline_keyboard: [
+            [{
+              text: '查阅帮助文档',
+              url: `https://github.com/Astrian/IFS-RSVP-Bot/wiki`
+            }],
+            [{
+              text: '订阅频道',
+              url: `https://t.me/ifsrsvpbot`
+            }],
+            [{
+              text: '加入反馈群',
+              url: `https://t.me/joinchat/A0P0mxHipaEeJ-4vzKgTuQ`
+            }]
+          ]
+        }
+      }
+    )
+
+  } catch (err) {
+    console.log('error accourd!')
+    console.log(err)
+    telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
+  }
+})
 
 // Inline button
 telegrafbot.on('callback_query', async (ctx) => {
