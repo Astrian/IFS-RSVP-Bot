@@ -221,7 +221,7 @@ telegrafbot.on('callback_query', async (ctx) => {
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
           null,
-          `请在消息框中写上 agent ${(ctx.update.callback_query.data.split(':'))[1]} 目前等级和 AP，以半角逗号 \`,\` 区隔。\n例如：\`16,40000000\`（大部分设备点击/长按示例可复制）`,
+          `请在消息框中写上 agent ${(ctx.update.callback_query.data.split(':'))[1]} 目前等级、AP 和步行距离数据，以半角逗号 \`,\` 区隔。\n例如：\`16,40000000,2500\`（大部分设备点击/长按示例可复制）`,
           {
             parse_mode: 'Markdown'
           }
