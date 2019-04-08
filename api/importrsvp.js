@@ -23,5 +23,5 @@ module.exports = async function (faction, location, rsvplist) {
       counter++
     }
   }
-  return `有 ${counter} 位特工已登记 RSVP 信息。`
+  return `有 ${counter} 位特工的 RSVP 信息成功被录入。`
 }
