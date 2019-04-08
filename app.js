@@ -105,6 +105,9 @@ telegrafbot.command('importrsvp', async (ctx) =>{
   try {
     let info = await API.checkpoc(ctx.message.from.id)
 
+    // check up poc info and ap logging status
+    await API.checkapstatus(info.faction, info.location, ctx.message.from.id)
+
     // if user only send the '/importrsvp' command, reply the help infomation
     if (ctx.message.text.slice(12) === '') {
       let reply = ''
