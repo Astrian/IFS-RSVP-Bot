@@ -14,6 +14,11 @@ async function main(tgid) {
   debug('completed')
   debug('\n')
 
+  debug('importing rsvp list...')
+  let list = ['aaa', 'bbb', 'ccc']
+  let recinfo = await API.importrsvp(info.faction, info.location, list)
+  debug(recinfo)
+
   debug('fetching agents first-letter list with checkin...')
   let firstletterdict = await API.checkupagents(info.faction, info.location, null, 'in', tgid)
   debug(firstletterdict)

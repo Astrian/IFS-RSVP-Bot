@@ -5,5 +5,6 @@ module.exports = {
   checkstatus: require('./checkstatus'),
   logdata: require('./logdata'),
   checkoutstatus: require('./checkoutstatus'),
-  cancelaprec: require('./cancelaprec')
+  cancelaprec: require('./cancelaprec'),
+  importrsvp: require('./importrsvp')
 }
