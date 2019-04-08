@@ -105,8 +105,14 @@ telegrafbot.command('importrsvp', async (ctx) =>{
   try {
     let info = await API.checkpoc(ctx.message.from.id)
 
+    // process list into array
+    let list = (ctx.message.text.slice(12)).split('\n')
+
+    // import info
+    let recinfo = await API.importrsvp(info.faction, info.location, list)
+
     // output list result
-    telegrambot.sendMessage(ctx.message.from.id, ctx.message.text.slice(12), {parse_mode: "Markdown"})
+    telegrambot.sendMessage(ctx.message.from.id, recinfo, {parse_mode: "Markdown"})
   } catch (err) {
     console.log('error accourd!')
     console.log(err)
