@@ -101,6 +101,18 @@ telegrafbot.command('cancelaprec', async (ctx) => {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
   }
 })
+telegrafbot.command('importrsvp', async (ctx) =>{
+  try {
+    let info = await API.checkpoc(ctx.message.from.id)
+
+    // output list result
+    telegrambot.sendMessage(ctx.message.from.id, ctx.message.text.slice(12), {parse_mode: "Markdown"})
+  } catch (err) {
+    console.log('error accourd!')
+    console.log(err)
+    telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
+  }
+})
 
 // Inline button
 telegrafbot.on('callback_query', async (ctx) => {
