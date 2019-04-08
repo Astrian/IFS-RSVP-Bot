@@ -1,5 +1,7 @@
 # IFS RSVP 登记助手机器人
 
+[![机器人更新频道](https://img.shields.io/badge/Channel-%40ifsrsvpbot-blue.svg?logo=telegram)](https://t.me/ifsrsvpbot)
+
 ## 介绍 & 功能
 这是一款专用于 Ingress First Saturday 活动中 PoC 统计到场人员 RSVP、AP 与等级情况的 Telegram Bot。
 
