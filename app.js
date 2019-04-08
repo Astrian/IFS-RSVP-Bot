@@ -24,7 +24,7 @@ telegrafbot.telegram.setWebhook(process.env.DOMAIN + process.env.RANDOM_ADDRESS)
 telegrafbot.command('start', async (ctx) => {
   try {
     let info = await API.checkpoc(ctx.message.from.id)
-    telegrambot.sendMessage(ctx.message.from.id, `欢迎你，${info.location} 场 ${info.faction} 签到人员。\n\n/importrsvp - 导入你所在阵营的特工\n/checkin - 进行签到\n/checkout - 进行签退`, {parse_mode: "Markdown"})
+    telegrambot.sendMessage(ctx.message.from.id, `欢迎你，${info.location} 场 ${info.faction} 签到人员。\n\n/importrsvp - 导入你所在阵营的特工\n/checkin - 进行签到\n/checkout - 进行签退\n/help - 寻求帮助`, {parse_mode: "Markdown"})
   } catch (err) {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
   }
@@ -105,6 +105,9 @@ telegrafbot.command('importrsvp', async (ctx) =>{
   try {
     let info = await API.checkpoc(ctx.message.from.id)
 
+    // check up poc info and ap logging status
+    await API.checkapstatus(info.faction, info.location, ctx.message.from.id)
+
     // if user only send the '/importrsvp' command, reply the help infomation
     if (ctx.message.text.slice(12) === '') {
       let reply = ''
@@ -126,6 +129,44 @@ telegrafbot.command('importrsvp', async (ctx) =>{
 
     // output list result
     telegrambot.sendMessage(ctx.message.from.id, recinfo, {parse_mode: "Markdown"})
+  } catch (err) {
+    console.log('error accourd!')
+    console.log(err)
+    telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
+  }
+})
+telegrafbot.command('help', async (ctx) =>{
+  try {
+    let info = await API.checkpoc(ctx.message.from.id)
+
+    // check up poc info and ap logging status
+    await API.checkapstatus(info.faction, info.location, ctx.message.from.id)
+
+    let message = '需要帮助吗？这些链接可能可以帮到你。\n'
+    telegrambot.sendMessage(
+      ctx.message.from.id,
+      message,
+      {
+        parse_mode: "Markdown",
+        reply_markup: {
+          inline_keyboard: [
+            [{
+              text: '查阅帮助文档',
+              url: `https://github.com/Astrian/IFS-RSVP-Bot/wiki`
+            }],
+            [{
+              text: '订阅频道',
+              url: `https://t.me/ifsrsvpbot`
+            }],
+            [{
+              text: '加入反馈群',
+              url: `https://t.me/joinchat/A0P0mxHipaEeJ-4vzKgTuQ`
+            }]
+          ]
+        }
+      }
+    )
+
   } catch (err) {
     console.log('error accourd!')
     console.log(err)
