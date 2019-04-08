@@ -6,7 +6,7 @@ const debug = require('debug')('rsvpbot:logaplevel.js')
 const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
 
 module.exports = async function (faction, location, level, ap, trekker, operator) {
-  debug(faction, location, level, ap, Trekker, operator)
+  debug(faction, location, level, ap, trekker, operator)
   // get agent record
   let agentsbase = await base(location).select({
     view: "Grid view",
