@@ -15,7 +15,7 @@ async function main(tgid) {
   debug('\n')
 
   debug('importing rsvp list...')
-  let list = ['aaa', 'bbb', 'ccc']
+  let list = ['sampleagent', 'sampleplayer']
   let recinfo = await API.importrsvp(info.faction, info.location, list)
   debug(recinfo)
 
@@ -34,7 +34,7 @@ async function main(tgid) {
   debug('\n')
 
   debug('set agent "sampleagent" ap and level with checkin')
-  await API.logaplevel(info.faction, info.location, '16', 40000000, tgid)
+  await API.logdata(info.faction, info.location, '16', 40000000, 2500, tgid)
   debug('\n')
 
   debug('fetching agents first-letter list with checkout...')
@@ -52,7 +52,7 @@ async function main(tgid) {
   debug('\n')
 
   debug('set agent "sampleagent" ap and level with checkout')
-  await API.logaplevel(info.faction, info.location, '16', 50000000, tgid)
+  await API.logaplevel(info.faction, info.location, '16', 50000000, 2600, tgid)
   debug('\n')
 
   debug('debug test done.')
