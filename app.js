@@ -24,7 +24,7 @@ telegrafbot.telegram.setWebhook(process.env.DOMAIN + process.env.RANDOM_ADDRESS)
 telegrafbot.command('start', async (ctx) => {
   try {
     let info = await API.checkpoc(ctx.message.from.id)
-    telegrambot.sendMessage(ctx.message.from.id, `欢迎你，${info.location} 场 ${info.faction} PoC。\n/checkin - 进行签到\n/checkout - 进行签退`, {parse_mode: "Markdown"})
+    telegrambot.sendMessage(ctx.message.from.id, `欢迎你，${info.location} 场 ${info.faction} 签到人员。\n\n/importrsvp - 导入你所在阵营的特工\n/checkin - 进行签到\n/checkout - 进行签退`, {parse_mode: "Markdown"})
   } catch (err) {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
   }
@@ -101,6 +101,37 @@ telegrafbot.command('cancelaprec', async (ctx) => {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
   }
 })
+telegrafbot.command('importrsvp', async (ctx) =>{
+  try {
+    let info = await API.checkpoc(ctx.message.from.id)
+
+    // if user only send the '/importrsvp' command, reply the help infomation
+    if (ctx.message.text.slice(12) === '') {
+      let reply = ''
+      reply += '请以 `/importrsvp+空格+RSVP 玩家列表` 的形式，来导入你所管理阵营的签到/签退特工。例如：\n'
+      reply += '```\n'
+      reply += '/importrsvp sampleagent1\n'
+      reply += 'sampleagent2\n'
+      reply += 'sampleagent3\n'
+      reply += '```\n'
+      reply += '小提示：直接从 FevGames 中复制特工列表并直接粘贴，效率更高噢，但请记得在指令后添加一个空格。'
+      throw reply
+    }
+
+    // process list into array
+    let list = (ctx.message.text.slice(12)).split('\n')
+
+    // import info
+    let recinfo = await API.importrsvp(info.faction, info.location, list)
+
+    // output list result
+    telegrambot.sendMessage(ctx.message.from.id, recinfo, {parse_mode: "Markdown"})
+  } catch (err) {
+    console.log('error accourd!')
+    console.log(err)
+    telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
+  }
+})
 
 // Inline button
 telegrafbot.on('callback_query', async (ctx) => {
@@ -142,7 +173,7 @@ telegrafbot.on('callback_query', async (ctx) => {
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
           null,
-          `请在消息框中写上 agent ${(ctx.update.callback_query.data.split(':'))[1]} 目前等级和 AP，以半角逗号 \`,\` 区隔。\n例如：\`16,40000000\`（大部分设备点击/长按示例可复制）`,
+          `请在消息框中写上 agent ${(ctx.update.callback_query.data.split(':'))[1]} 目前等级、AP 和步行距离数据，以半角逗号 \`,\` 区隔。\n例如：\`16,40000000,2500\`（大部分设备点击/长按示例可复制）`,
           {
             parse_mode: 'Markdown'
           }
@@ -190,7 +221,7 @@ telegrafbot.on('callback_query', async (ctx) => {
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
           null,
-          `请在消息框中写上 agent ${(ctx.update.callback_query.data.split(':'))[1]} 目前等级和 AP，以半角逗号 \`,\` 区隔。\n例如：\`16,40000000\`（大部分设备点击/长按示例可复制）`,
+          `请在消息框中写上 agent ${(ctx.update.callback_query.data.split(':'))[1]} 目前等级、AP 和步行距离数据，以半角逗号 \`,\` 区隔。\n例如：\`16,40000000,2500\`（大部分设备点击/长按示例可复制）`,
           {
             parse_mode: 'Markdown'
           }
@@ -233,11 +264,12 @@ telegrafbot.on('callback_query', async (ctx) => {
   }
 })
 
-// recive AP/Level
-telegrafbot.hears(new RegExp(/\d{1,2},\d{1,}/), async (ctx) => {
+// recive AP/Level/trekker data
+telegrafbot.hears(new RegExp(/\d{1,2},\d{1,},\d{1,}/), async (ctx) => {
   try {
+    if (parseInt(ctx.message.text.split(',')[0]) > 16 || parseInt(ctx.message.text.split(',')[0]) < 1) throw `等级错误，请尝试重新输入。`
     let info = await API.checkpoc(ctx.message.from.id)
-    await API.logaplevel(info.faction, info.location, (ctx.message.text.split(','))[0], (ctx.message.text.split(','))[1], ctx.message.from.id)
+    await API.logdata(info.faction, info.location, (ctx.message.text.split(','))[0], (ctx.message.text.split(','))[1], (ctx.message.text.split(','))[2], ctx.message.from.id)
     telegrambot.sendMessage(ctx.message.from.id, `签到/签退已完成。`, {parse_mode: "Markdown"})
   } catch (err) {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})

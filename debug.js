@@ -14,6 +14,11 @@ async function main(tgid) {
   debug('completed')
   debug('\n')
 
+  debug('importing rsvp list...')
+  let list = ['sampleagent', 'sampleplayer']
+  let recinfo = await API.importrsvp(info.faction, info.location, list)
+  debug(recinfo)
+
   debug('fetching agents first-letter list with checkin...')
   let firstletterdict = await API.checkupagents(info.faction, info.location, null, 'in', tgid)
   debug(firstletterdict)
@@ -29,7 +34,7 @@ async function main(tgid) {
   debug('\n')
 
   debug('set agent "sampleagent" ap and level with checkin')
-  await API.logaplevel(info.faction, info.location, '16', 40000000, tgid)
+  await API.logdata(info.faction, info.location, '16', 40000000, 2500, tgid)
   debug('\n')
 
   debug('fetching agents first-letter list with checkout...')
@@ -42,12 +47,12 @@ async function main(tgid) {
   debug(kagentslist)
   debug('\n')
 
-  debug('set agent Kirrior into ap-logging status')
+  debug('set agent "sampleagent" into ap-logging status')
   await API.checkstatus(info.faction, info.location, 'sampleagent', 'out', tgid)
   debug('\n')
 
   debug('set agent "sampleagent" ap and level with checkout')
-  await API.logaplevel(info.faction, info.location, '16', 50000000, tgid)
+  await API.logdata(info.faction, info.location, '16', 50000000, 2600, tgid)
   debug('\n')
 
   debug('debug test done.')
