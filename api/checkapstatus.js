@@ -8,7 +8,9 @@ const i18n = require('./i18nparse')
 module.exports = async function (faction, location, identity) {
   const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID)
   let sth = await getData(base, faction, location, identity)
-  debug(`sth = ${sth}`)
+  if (sth.error) {
+    throw 'error!'
+  }
   return
 }
 
@@ -20,10 +22,9 @@ function getData(base, faction, location, identity) {
       filterByFormula: `AND(NOT({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
     }).eachPage((records, fetchNextPage) => {
       records.forEach(function(record) {
-        res('ok')
-        // console.log('Retrieved', record.get('特工代号'));
+        res({ error: true, id: record.get('特工代号') })
       })
-      res('ok')
+      res({error: false})
     }, (error) => {
       debug('error occured!')
       if (error) { rej(error) }
