@@ -32,14 +32,13 @@ module.exports = async function (faction, location, level, ap, trekker, operator
       data['操作人'] = null
     }
   }
-  await base(location).update(id, data, (err, res) => {
+  await base(location).update(agent.id, data, (err, res) => {
     if (err) {
       console.log(err)
       throw `在输入数据过程中出现错误。${err}`
     }
     else return record.get('特工代号')
   })
-  return
 }
 
 function getData(base, faction, location, operator) {
