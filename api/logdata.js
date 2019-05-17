@@ -50,7 +50,8 @@ function getData(base, faction, location, operator) {
       records.forEach(function(record) {
         res({id: record.getId(), status: record.get('正在登记经验值'), apatin: record.get('入场初始经验'), agentname: record.get('特工代号')})
       })
-      rej(await i18n('datainput_error_notlogging', {}))
+      let error = await i18n('datainput_error_notlogging', {})
+      rej(error)
     }, (error) => {
       debug('error occured!')
       if (error) { rej(error) }
