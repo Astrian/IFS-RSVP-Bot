@@ -18,7 +18,7 @@ function getData(base, faction, location, identity) {
     base(location).select({
       maxRecords: 1,
       view: "Grid view",
-      filterByFormula: `AND (NOT ({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
+      filterByFormula: `NOT ({正在登记经验值} = '')`
     }).eachPage((records, fetchNextPage) => {
       records.forEach(function(record) {
         res('ok')
