@@ -191,7 +191,7 @@ telegrafbot.on('callback_query', async (ctx) => {
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
           null,
-          API.i18n("checkin_chooseagent", {}),
+          await API.i18n("checkin_chooseagent", {}),
           {
             parse_mode: 'Markdown',
             reply_markup: {
