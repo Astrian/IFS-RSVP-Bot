@@ -5,18 +5,16 @@ const debug = require('debug')('rsvpbot:api/checkapstatus.js')
 // Import i18n function
 const i18n = require('./i18nparse')
 
-// Import RSVP base
-const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
-
-module.exports = async function (base, faction, location, identity) {
+module.exports = async function (faction, location, identity) {
   // Check AP log status
   debug('fetching infomation from airtable...')
   let loggingstatus = await status(base, location, faction, identity)
   debug(loggingstatus)
 }
 
-function status(base, location, faction, identity) {
+function status(location, faction, identity) {
   return new Promise((err, res) => {
+    const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
     base(location).select({
       maxRecords: 1,
       view: "Grid view",
