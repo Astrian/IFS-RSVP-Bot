@@ -90,7 +90,7 @@ telegrafbot.command('cancelaprec', async (ctx) => {
 
     telegrambot.sendMessage(
       ctx.message.from.id,
-      '已取消填充 AP/等级的状态。',
+      await API.i18n("datainput_cancel", info),
       {
         parse_mode: "Markdown",
       }
