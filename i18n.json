@@ -11,6 +11,6 @@
     "checkin_choosefirstletter": "Choose the letter that at the beginning of agent name of the agent want to check in.",
     "checkin_chooseagent": "Choose the agent name of the agent want to check in.",
     "checkin_error_checkedin": "⚠️ Agent {agent} already checked in. Choose a different agent.",
-    "checkin_logdata": "Write down the level, AP and Trekker (“Distance walked” in agent profile) data of agent {agent} in the message text field, and send it to bot. Separated with `,`, such as: `16,40000000,2500`. You can longpress or click the sample to copy it in most devices"
+    "checkin_logdata": "Write down the level, AP and Trekker (“Distance walked” in agent profile) data of agent {agent} in the message text field, and send it to bot.\nSeparated with `,`, such as: `16,40000000,2500`. You can longpress or click the sample to copy it in most devices"
   }
 }
