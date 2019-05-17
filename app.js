@@ -67,7 +67,7 @@ telegrafbot.command('checkout', async (ctx) => {
 
     telegrambot.sendMessage(
       ctx.message.from.id,
-      '请选择签退 agent 的 ID 首字母：',
+      await API.i18n("checkout_choosefirstletter", {}),
       {
         parse_mode: "Markdown",
         reply_markup: {
