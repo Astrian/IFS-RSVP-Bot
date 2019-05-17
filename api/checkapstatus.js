@@ -9,7 +9,8 @@ module.exports = async function (faction, location, identity) {
   // Check AP log status
   debug('fetching infomation from airtable...')
   let loggingstatus = await status(location, faction, identity)
-  debug(loggingstatus)
+  console.log(loggingstatus)
+  return
 }
 
 function status(location, faction, identity) {
