@@ -9,7 +9,7 @@ module.exports = async function (faction, location, identity) {
   const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID)
   let sth = await getData(base, faction, location, identity)
   if (sth.error) {
-    throw 'error!'
+    throw i18n('datainput_error_inputstatus', {agent: sth.id})
   }
   return
 }
