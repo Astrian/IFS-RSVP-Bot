@@ -11,7 +11,7 @@ const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env
 module.exports = async function (base, faction, location, identity) {
   // Check AP log status
   debug('fetching infomation from airtable...')
-  let loggingstatus = await status
+  let loggingstatus = await status(base, location, faction, identity)
   debug(loggingstatus)
 }
 
