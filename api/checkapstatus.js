@@ -14,11 +14,10 @@ module.exports = async function (faction, location, identity) {
 
 function getData(base, faction, location, identity) {
   return new Promise((res, rej) => {
-    debug(`AND (NOT ({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`)
     base(location).select({
       maxRecords: 1,
       view: "Grid view",
-      filterByFormula: `NOT ({正在登记经验值} = '')`
+      filterByFormula: `AND(NOT({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
     }).eachPage((records, fetchNextPage) => {
       records.forEach(function(record) {
         res('ok')
