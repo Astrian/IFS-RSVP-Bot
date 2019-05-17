@@ -9,11 +9,8 @@ module.exports = async function (faction, location, level, ap, trekker, operator
   // Import RSVP base
   const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
   // get agent record
-  let agentsbase = await base(location).select({
-    view: "Grid view",
-    filterByFormula: `AND({阵营} = '${faction}', NOT({正在登记经验值} = ''), {操作人} = ${operator})`
-  }).firstPage()
-  if (!agentsbase.length) throw `目前你还没有为任何一个 agent 进行签到。`
+  let agentsbase = await getData(base, faction, location, operator)
+  /* if (!agentsbase.length) throw `目前你还没有为任何一个 agent 进行签到。`
   let error = ''
   let sth = await agentsbase.forEach(async record => {
     let data = {}
@@ -42,7 +39,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
     } else {
 
     }
-  })
+  }) */
   debug(sth)
 
   /* await base(location).update(id, data, (err, res) => {
@@ -55,7 +52,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
   return
 }
 
-function getData(base, faction, location, identity) {
+function getData(base, faction, location, operator) {
   return new Promise((res, rej) => {
     base(location).select({
       view: "Grid view",
