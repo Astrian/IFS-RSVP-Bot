@@ -6,5 +6,18 @@ const debug = require('debug')('rsvpbot:api/checkapstatus.js')
 const i18n = require('./i18nparse')
 
 module.exports = async function (faction, location, identity) {
-  throw 'error'
+  const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID)
+  let sth = await getData(base, faction, location, identity)
+  debug(sth)
+  return
+}
+
+function getData(base, faction, location, identity) {
+  new Promise((err, res) => {
+    base(location).select({
+      maxRecords: 1,
+      view: "Grid view",
+      filterByFormula: `AND (NOT ({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
+    }).firstPage(result => res(result), error => err(error))
+  })
 }
