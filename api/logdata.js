@@ -2,6 +2,9 @@
 const Airtable = require('airtable');
 const debug = require('debug')('rsvpbot:logaplevel.js')
 
+// Import i18n function
+const i18n = require('./i18nparse')
+
 // Import RSVP base
 const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
 
@@ -27,7 +30,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
     }
     else if (record.get('正在登记经验值') === 2) {
       if (parseInt(record.get('入场初始经验')) - parseInt(ap) < 5000) {
-        error = `${record.get('特工代号')} 的活动 AP 差额不足 5000，无法进行登记。该特工的入场 AP 值为 ${record.get('入场初始经验')}。你可以尝试检查错误数据并重新登记，或使用 /cancelaprec 取消登记。`
+        error = i18n('checkout_error_notenoughapearned', {agent: record.get('特工代号'), apvalue: record.get('入场初始经验')})
       } else {
         data['活动结束经验'] = parseInt(ap)
         data['活动结束等级'] = level
