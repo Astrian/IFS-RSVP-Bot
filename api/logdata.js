@@ -25,6 +25,9 @@ module.exports = async function (faction, location, level, ap, trekker, operator
       data['操作人'] = null
     }
     else if (record.get('正在登记经验值') === 2) {
+      if (parseInt(record.get('入场初始经验')) - parseInt(ap) < 5000) {
+        throw `${record.get('特工代号')} 的活动 AP 差额不足 5000，无法进行登记。该特工的入场 AP 值为 ${record.get('入场初始经验')}。你可以尝试检查错误数据并重新登记，或使用 /cancel 取消登记。`
+      }
       data['活动结束经验'] = parseInt(ap)
       data['活动结束等级'] = level
       data['活动结束步行距离'] = parseInt(trekker)
