@@ -316,6 +316,7 @@ telegrafbot.hears(new RegExp(/\d{1,2},\d{1,},\d{1,}/), async (ctx) => {
     await API.logdata(info.faction, info.location, (ctx.message.text.split(','))[0], (ctx.message.text.split(','))[1], (ctx.message.text.split(','))[2], ctx.message.from.id)
     telegrambot.sendMessage(ctx.message.from.id, await API.i18n("datainput_complete", {}), {parse_mode: "Markdown"})
   } catch (err) {
+    debug(err)
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
   }
 })

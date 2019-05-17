@@ -21,7 +21,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
     data['操作人'] = null
   } else if (agent.status === 2) {
     debug('aaaaa')
-    if (parseInt(record.get('入场初始经验')) - parseInt(ap) < 5000) {
+    if (parseInt(agent.apatin) - parseInt(ap) < 5000) {
       let error = await i18n('checkout_error_notenoughapearned', {agent: agent.agentname, apvalue: agent.apatin})
       throw 'aaa'
     } else {
