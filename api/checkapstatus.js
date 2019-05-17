@@ -18,11 +18,11 @@ function getData(base, faction, location, identity) {
       maxRecords: 1,
       view: "Grid view",
       filterByFormula: `AND (NOT ({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
-    }).firstPage(result => {
+    }).firstPage(function page(result) {
       result.forEach((record) => {
         res(record.get('特工代号'))
       })
-    }, error => {
+    }, function done(error) {
       if (error) {
         err(error)
       }
