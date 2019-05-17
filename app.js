@@ -41,7 +41,7 @@ telegrafbot.command('checkin', async (ctx) => {
 
     telegrambot.sendMessage(
       ctx.message.from.id,
-      await API.i18n("welcome_text", {}),
+      await API.i18n("checkin_choosefirstletter", {}),
       {
         parse_mode: "Markdown",
         reply_markup: {
