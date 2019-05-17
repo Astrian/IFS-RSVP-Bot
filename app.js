@@ -271,7 +271,7 @@ telegrafbot.on('callback_query', async (ctx) => {
         break
       }
       case 'checkedout': {
-        telegrambot.answerCbQuery(ctx.update.callback_query.id, await API.i18n("checkin_error_checkedout", {agent: (ctx.update.callback_query.data.split(':'))[1]}))
+        telegrambot.answerCbQuery(ctx.update.callback_query.id, await API.i18n("checkout_error_checkedout", {agent: (ctx.update.callback_query.data.split(':'))[1]}))
         break
       }
       case 'notin': {
