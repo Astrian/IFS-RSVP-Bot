@@ -16,8 +16,11 @@ module.exports = async function (faction, location, identity) {
     view: "Grid view",
     filterByFormula: `AND(NOT({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
   }).firstPage().then((res) => {
-    debug(res)
-    return
+    if (res.length) {
+      let error = await i18n("datainput_error_inputstatus", {agent: res[0].get(' 特工代号')})
+    } else {
+      return
+    }
   })
   debug('infomation fetched.')
 }
