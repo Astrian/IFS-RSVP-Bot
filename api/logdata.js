@@ -19,7 +19,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
     data['入场步行距离'] = parseInt(trekker)
     data['正在登记经验值'] = null
     data['操作人'] = null
-  } else (agent.status === 2) {
+  } else if (agent.status === 2) {
     if (parseInt(record.get('入场初始经验')) - parseInt(ap) < 5000) {
       throw (await i18n('checkout_error_notenoughapearned', {agent: agent.agentname, apvalue: agent.apatin}))
     } else {
