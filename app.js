@@ -111,7 +111,7 @@ telegrafbot.command('importrsvp', async (ctx) =>{
     // if user only send the '/importrsvp' command, reply the help infomation
     if (ctx.message.text.slice(12) === '') {
       let error = await API.i18n('import_help', {})
-      throw reply
+      throw error
     }
 
     // process list into array
