@@ -24,7 +24,7 @@ function getData(base, faction, location, identity) {
         // console.log('Retrieved', record.get('特工代号'));
       })
       res('ok')
-    }, done(error) => {
+    }, (error) => {
       if (error) { rej(error) }
     })
   })
