@@ -24,7 +24,7 @@ telegrafbot.telegram.setWebhook(process.env.DOMAIN + process.env.RANDOM_ADDRESS)
 telegrafbot.command('start', async (ctx) => {
   try {
     let info = await API.checkpoc(ctx.message.from.id)
-    telegrambot.sendMessage(ctx.message.from.id, await API.i18n("welcome_text", process.env.I18N || "en_us", info), {parse_mode: "Markdown"})
+    telegrambot.sendMessage(ctx.message.from.id, await API.i18n("welcome_text", info), {parse_mode: "Markdown"})
   } catch (err) {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
   }
@@ -41,7 +41,7 @@ telegrafbot.command('checkin', async (ctx) => {
 
     telegrambot.sendMessage(
       ctx.message.from.id,
-      '请选择签到 agent 的 ID 首字母：',
+      await API.i18n("welcome_text", {}),
       {
         parse_mode: "Markdown",
         reply_markup: {
