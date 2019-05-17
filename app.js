@@ -223,7 +223,7 @@ telegrafbot.on('callback_query', async (ctx) => {
         break
       }
       case 'checkedin': {
-        telegrambot.answerCbQuery(ctx.update.callback_query.id, await API.i18n("checkin_error_checkedin", {}))
+        telegrambot.answerCbQuery(ctx.update.callback_query.id, await API.i18n("checkin_error_checkedin", {agent: (ctx.update.callback_query.data.split(':'))[1]}))
         break
       }
       case 'findagent4out': {
