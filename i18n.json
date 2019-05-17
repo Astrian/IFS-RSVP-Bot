@@ -17,7 +17,12 @@
       "checkout_error_notin": "⚠️ 特工 {agent} 尚未进行签到，无法签退。",
       "checkout_error_notenoughapearned": "{agent} 在活动期间的 AP 获取值不足 5000，无法进行登记。该特工的入场 AP 值为 {apvalue}。你可以尝试检查错误数据并重新登记，或使用 /cancelaprec 取消登记。",
       "import_help": "请以 `/importrsvp+空格+RSVP 玩家列表` 的形式，来导入你所管理阵营的签到/签退特工。例如：\n```\n/importrsvp sampleagent1\nsampleagent2\nsampleagent3\n```\n小提示：直接从 FevGames 中复制特工列表并直接粘贴，效率更高噢，但请记得在指令后添加一个空格。",
-      "import_success": "有 {counter} 位特工的 RSVP 信息成功被录入。"
+      "import_success": "有 {counter} 位特工的 RSVP 信息成功被录入。",
+      "help_title": "需要帮助吗？这些链接可能可以帮到你。",
+      "help_wiki": "查阅帮助文档",
+      "help_channel": "订阅频道",
+      "help_group": "加入反馈群",
+      "help_translate": "帮助翻译 bot"
     },
     "en_us": {
       "welcome_text": "Hello. You are {faction} organizer of {location} First Saturday.\n\n/importrsvp - Import the list of agents same as the faction you are managing\n/checkin - Check in an agent\n/checkout - Check out an agent\n/help - I need help",
@@ -36,7 +41,12 @@
       "checkout_error_notin": "⚠️ Agent {agent} does not checked-in.",
       "checkout_error_notenoughapearned": "I can't check agent {agent} out, because the agent does not earned at least 5000 AP during event. The AP value logged at check-in action is {apvalue}. You may try fix the error and re-send new data to me, or send /cancelaprec to give up.",
       "import_help": "Input agent names of the agents in the faction managed by you, with the format `/importrsvp+SPACE+agent names`. For example:\n```\n/importrsvp sampleagent1\nsampleagent2\nsampleagent3\n```\nTips: paste the agents list from FevGames is recommened. Remember to add a space after `/importrsvp` command before you paste the list.",
-      "import_success": "Imported {counter} agent(s)."
+      "import_success": "Imported {counter} agent(s).",
+      "help_title": "Do you need a hand? There are some helpful links.",
+      "help_wiki": "Go to knowldge base",
+      "help_channel": "Follow bot update channel (Chinese-oriented)",
+      "help_group": "Join feedback group",
+      "help_translate": "Help us to translate the bot"
     }
   }
 }

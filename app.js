@@ -135,25 +135,28 @@ telegrafbot.command('help', async (ctx) =>{
     // check up poc info and ap logging status
     await API.checkapstatus(info.faction, info.location, ctx.message.from.id)
 
-    let message = '需要帮助吗？这些链接可能可以帮到你。\n'
     telegrambot.sendMessage(
       ctx.message.from.id,
-      message,
+      await API.i18n('help_title', {}),
       {
         parse_mode: "Markdown",
         reply_markup: {
           inline_keyboard: [
             [{
-              text: '查阅帮助文档',
+              text: await API.i18n('help_wiki', {}),
               url: `https://github.com/Astrian/IFS-RSVP-Bot/wiki`
             }],
             [{
-              text: '订阅频道',
+              text: await API.i18n('help_channel', {}),
               url: `https://t.me/ifsrsvpbot`
             }],
             [{
-              text: '加入反馈群',
+              text: await API.i18n('help_group', {}),
               url: `https://t.me/joinchat/A0P0mxHipaEeJ-4vzKgTuQ`
+            }],
+            [{
+              text: await API.i18n('help_translate', {}),
+              url: `https://crowdin.com/project/ifs-rsvp-bot`
             }]
           ]
         }
