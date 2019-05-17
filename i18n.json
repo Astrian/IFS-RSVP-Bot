@@ -16,7 +16,7 @@
       "checkin_error_checkedin": "⚠️ Agent {agent} already checked in. Choose a different agent.",
       "checkin_logdata": "Write down the level, AP and Trekker (“Distance walked” in agent profile) data of agent {agent} in the message text field, and send it to me.\nSeparated with `,`, such as: `16,40000000,2500`. You can longpress or click the sample to copy it in most devices.",
       "datainput_wronglevel": "You may write a wrong level. Maybe you can check your input, and try to send again.",
-      "datainput_error_inputstatus": "I am waiting for the data of agent {agent}. You may send it to me first, or send /cancelaprec to exit from it."
+      "datainput_error_inputstatus": "I am waiting for the data of agent {agent}. You may send it to me first, or send /cancelaprec to cancel it."
     }
   }
 }
