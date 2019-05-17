@@ -9,7 +9,11 @@
       "datainput_wronglevel": "等级错误，尝试重新输入。",
       "datainput_error_inputstatus": "你目前正在登记 {agent} 的 AP，请先登记或发送 /cancelaprec 来放弃登记。",
       "datainput_cancel": "已取消填充 AP/等级的状态。",
-      "datainput_complete": "签到/签退已完成。"
+      "datainput_complete": "签到/签退已完成。",
+      "checkout_choosefirstletter": "请选择签退 agent 的 ID 首字母。",
+      "checkout_chooseagent": "请选择签退 agent。",
+      "checkout_error_checkedout": "⚠️ 特工 {agent} 已经完成签退。请选择一个不同的特工。",
+      "checkout_error_notin": "⚠️ 特工 {agent} 尚未进行签到，无法签退。"
     },
     "en_us": {
       "welcome_text": "Hello. You are {faction} organizer of {location} First Saturday.\n\n/importrsvp - Import the list of agents same as the faction you are managing\n/checkin - Check in an agent\n/checkout - Check out an agent\n/help - I need help",
@@ -20,7 +24,11 @@
       "datainput_wronglevel": "You may write a wrong level. Maybe you can check your input, and try to send again.",
       "datainput_error_inputstatus": "I am waiting for the data of agent {agent}. You may send it to me first, or send /cancelaprec to cancel it.",
       "datainput_cancel": "Ok, I am not waiting for agent data.",
-      "datainput_complete": "Done for check in/out."
+      "datainput_complete": "Done for check in/out.",
+      "checkin_choosefirstletter": "Choose the letter that at the beginning of agent name of the agent want to check out.",
+      "checkout_chooseagent": "Choose the agent name of the agent want to check out.",
+      "checkout_error_checkedout": "⚠️ Agent {agent} already checked out. Choose a different agent.",
+      "checkout_error_notin": "⚠️ Agent {agent} does not checked-in."
     }
   }
 }

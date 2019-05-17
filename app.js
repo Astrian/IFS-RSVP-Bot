@@ -239,7 +239,7 @@ telegrafbot.on('callback_query', async (ctx) => {
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
           null,
-          `请选择签退 agent：`,
+          await API.i18n("checkout_chooseagent", {}),
           {
             parse_mode: 'Markdown',
             reply_markup: {
@@ -262,7 +262,7 @@ telegrafbot.on('callback_query', async (ctx) => {
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
           null,
-          `请在消息框中写上 agent ${(ctx.update.callback_query.data.split(':'))[1]} 目前等级、AP 和步行距离数据，以半角逗号 \`,\` 区隔。\n例如：\`16,40000000,2500\`（大部分设备点击/长按示例可复制）`,
+          await API.i18n("checkin_logdata", {agent: (ctx.update.callback_query.data.split(':'))[1]}),
           {
             parse_mode: 'Markdown'
           }
@@ -271,11 +271,11 @@ telegrafbot.on('callback_query', async (ctx) => {
         break
       }
       case 'checkedout': {
-        telegrambot.answerCbQuery(ctx.update.callback_query.id, `⚠️ 特工 ${(ctx.update.callback_query.data.split(':'))[1]} 已经完成签退。请选择一个不同的特工。`)
+        telegrambot.answerCbQuery(ctx.update.callback_query.id, await API.i18n("checkin_error_checkedout", {agent: (ctx.update.callback_query.data.split(':'))[1]}))
         break
       }
       case 'notin': {
-        telegrambot.answerCbQuery(ctx.update.callback_query.id, `⚠️ 特工 ${(ctx.update.callback_query.data.split(':'))[1]} 尚未进行签到，无法签退。`)
+        telegrambot.answerCbQuery(ctx.update.callback_query.id, await API.i18n("checkout_error_notin", {agent: (ctx.update.callback_query.data.split(':'))[1]}))
         break
       }
       default: {
