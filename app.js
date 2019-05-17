@@ -223,7 +223,7 @@ telegrafbot.on('callback_query', async (ctx) => {
         break
       }
       case 'checkedin': {
-        telegrambot.answerCbQuery(ctx.update.callback_query.id, `⚠️ 特工 ${(ctx.update.callback_query.data.split(':'))[1]} 已经完成签到。请选择一个不同的特工。`)
+        telegrambot.answerCbQuery(ctx.update.callback_query.id, await API.i18n("checkin_error_checkedin", {}))
         break
       }
       case 'findagent4out': {

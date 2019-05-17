@@ -2,11 +2,13 @@
   "zh_cn": {
     "welcome_text": "欢迎你，{location} 场 {faction} 签到人员。\n\n/importrsvp - 导入你所在阵营的特工\n/checkin - 进行签到\n/checkout - 进行签退\n/help - 寻求帮助",
     "checkin_choosefirstletter": "请选择签到 agent 的 ID 首字母。",
-    "checkin_chooseagent": "请选择签到 agent。"
+    "checkin_chooseagent": "请选择签到 agent。",
+    "checkin_error_checkedin": "⚠️ 特工 ${(ctx.update.callback_query.data.split(':'))[1]} 已经完成签到。请选择一个不同的特工。"
   },
   "en_us": {
     "welcome_text": "Hello. You are {faction} organizer of {location} First Saturday.\n\n/importrsvp - Import the list of agents same as the faction you are managing\n/checkin - Check in an agent\n/checkout - Check out an agent\n/help - I need help",
     "checkin_choosefirstletter": "Choose the letter that at the beginning of the agent name you want to check in.",
-    "checkin_chooseagent": "Choose the agent name you want to check in."
+    "checkin_chooseagent": "Choose the agent name you want to check in.",
+    "checkin_error_checkedin": "⚠️ Agent ${(ctx.update.callback_query.data.split(':'))[1]} already checked in. Choose a different agent."
   }
 }
