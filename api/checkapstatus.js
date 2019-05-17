@@ -24,11 +24,11 @@ function status(location, faction, identity) {
       maxRecords: 1,
       view: "Grid view",
       filterByFormula: `AND(NOT({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
-    }).firstPage().then(result => res(result))
+    }).firstPage().then(result => res(result), error => err(error))
   })
 }
 function getid(group) {
   return new Promise((err, res) => {
-    group.forEach().then(result => res(result))
+    group.forEach().then(result => res(result), error => err(error))
   })
 }
