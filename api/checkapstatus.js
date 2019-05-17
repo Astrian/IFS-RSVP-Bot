@@ -20,7 +20,8 @@ function getData(base, faction, location, identity) {
       filterByFormula: `AND (NOT ({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-          console.log('Retrieved', record.get('特工代号'));
+        res('ok')
+        // console.log('Retrieved', record.get('特工代号'));
       });
       res('ok')
     }, function done(error) {
