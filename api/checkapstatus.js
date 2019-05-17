@@ -2,6 +2,9 @@
 const Airtable = require('airtable');
 const debug = require('debug')('rsvpbot:api/checkapstatus.js')
 
+// Import i18n function
+const i18n = require('./i18nparse')
+
 // Import RSVP base
 const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
 
@@ -15,7 +18,8 @@ module.exports = async function (faction, location, identity) {
   }).firstPage()
   debug('infomation fetched.')
   loggingstatus.forEach(record => {
-    throw `你目前正在登记 ${record.get('特工代号')} 的 AP，请先登记或发送 /cancelaprec 来放弃登记。`
+    let error = await i18n("datainput_error_inputstatus", {agent: record.get('特工代号')})
+    throw error
   })
   return
 }

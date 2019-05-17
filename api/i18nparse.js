@@ -4,7 +4,7 @@ const debug = require('debug')('rsvpbot:api/i18n.js')
 
 module.exports = async function (string, obj) {
   let lang = process.env.I18N || "en_us"
-  let str = i18n[lang][string] || i18n["en_us"][string]
+  let str = i18n.botscript[lang][string] || i18n["en_us"][string]
   Object.keys(obj).forEach(key => {
     str = str.replace(new RegExp(`{${key}}`,'g'), obj[key]);
   })
