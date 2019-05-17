@@ -30,7 +30,7 @@
       "checkout_chooseagent": "Choose the agent name of the agent want to check out.",
       "checkout_error_checkedout": "⚠️ Agent {agent} already checked out. Choose a different agent.",
       "checkout_error_notin": "⚠️ Agent {agent} does not checked-in.",
-      "checkout_error_notenoughapearned": "I can't check agent {agent} out, because the agent does not earned 5000 AP during event. The AP value logged at check-in action is {apvalue}. You may try fix the error and re-send new data to me, or send /cancelaprec to give up."
+      "checkout_error_notenoughapearned": "I can't check agent {agent} out, because the agent does not earned at least 5000 AP during event. The AP value logged at check-in action is {apvalue}. You may try fix the error and re-send new data to me, or send /cancelaprec to give up."
     }
   }
 }

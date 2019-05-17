@@ -39,15 +39,16 @@ module.exports = async function (faction, location, level, ap, trekker, operator
         data['操作人'] = null
       }
     }
-    await base(location).update(record.getId(), data, (err, res) => {
-      if (err) {
-        console.log(err)
-        throw `在输入数据过程中出现错误。${err}`
-      }
-      else return record.get('特工代号')
-    })
+    if (error !== '') {
+      throw error
+    } else {
+      await base(location).update(record.getId(), data, (err, res) => {
+        if (err) {
+          console.log(err)
+          throw `在输入数据过程中出现错误。${err}`
+        }
+        else return record.get('特工代号')
+      })
+    }
   })
-  if (error !== '') {
-    throw error
-  }
 }
