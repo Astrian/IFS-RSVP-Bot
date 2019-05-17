@@ -1,6 +1,7 @@
 {
   "botscript": {
     "welcome_text": "Hello. You are {faction} organizer of {location} First Saturday.\n\n/importrsvp - Import the list of agents same as the faction you are managing\n/checkin - Check in an agent\n/checkout - Check out an agent\n/help - I need help",
+    "not_allowed": "Sorry, you are not allowed to use the bot. Ask PoC for more info. Have fun with First Saturday Event!",
     "checkin_choosefirstletter": "Choose the letter that at the beginning of agent name of the agent want to check in.",
     "checkin_chooseagent": "Choose the agent name of the agent want to check in.",
     "checkin_error_checkedin": "⚠️ Agent {agent} already checked in. Choose a different agent.",

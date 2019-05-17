@@ -1,6 +1,7 @@
 {
   "botscript": {
     "welcome_text": "欢迎你，{location} 场 {faction} 签到人员。\n\n/importrsvp - 导入你所在阵营的特工\n/checkin - 进行签到\n/checkout - 进行签退\n/help - 寻求帮助",
+    "not_allowed": "抱歉，你没有权限使用本 bot，请联系你所在阵营的 PoC 了解详情。希望你可以在 Ingress First Saturday 玩得愉快！",
     "checkin_choosefirstletter": "请选择签到 agent 的 ID 首字母。",
     "checkin_chooseagent": "请选择签到 agent。",
     "checkin_error_checkedin": "⚠️ 特工 {agent} 已经完成签到。请选择一个不同的特工。",

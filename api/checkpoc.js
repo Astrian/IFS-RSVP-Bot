@@ -1,5 +1,8 @@
 const debug = require('debug')('rsvpbot:api/checkpoc.js')
 
+// Import i18n function
+const i18n = require('./i18nparse')
+
 module.exports = async function (id) {
   let ifs = JSON.parse(process.env.IFS_INFO)
   for (let i in ifs) {
@@ -11,5 +14,5 @@ module.exports = async function (id) {
     }
     if (faction !== '') return { faction, location: ifs[i].location}
   }
-  throw `抱歉，你没有权限使用本 bot，请联系你所在阵营的 PoC 完成签到。希望你可以在 Ingress First Saturday 玩得愉快！`
+  throw i18n('not_allowed', {})
 }
