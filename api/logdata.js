@@ -37,7 +37,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
       console.log(err)
       throw `在输入数据过程中出现错误。${err}`
     }
-    else return record.get('特工代号')
+    else return agent.agentname
   })
 }
 
