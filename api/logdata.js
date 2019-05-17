@@ -30,7 +30,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
     }
     else if (record.get('正在登记经验值') === 2) {
       if (parseInt(record.get('入场初始经验')) - parseInt(ap) < 5000) {
-        error = i18n('checkout_error_notenoughapearned', {agent: record.get('特工代号'), apvalue: record.get('入场初始经验')})
+        error = await i18n('checkout_error_notenoughapearned', {agent: record.get('特工代号'), apvalue: record.get('入场初始经验')})
       } else {
         data['活动结束经验'] = parseInt(ap)
         data['活动结束等级'] = level
