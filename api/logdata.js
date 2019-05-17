@@ -9,7 +9,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
   // Import RSVP base
   const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
   // get agent record
-  let agentsbase = await getData(base, faction, location, operator)
+  let agent = await getData(base, faction, location, operator)
   /* if (!agentsbase.length) throw `目前你还没有为任何一个 agent 进行签到。`
   let error = ''
   let sth = await agentsbase.forEach(async record => {
@@ -40,7 +40,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
 
     }
   }) */
-  debug(sth)
+  debug(agent)
 
   /* await base(location).update(id, data, (err, res) => {
     if (err) {
