@@ -25,7 +25,7 @@
       "datainput_error_inputstatus": "I am waiting for the data of agent {agent}. You may send it to me first, or send /cancelaprec to cancel it.",
       "datainput_cancel": "Ok, I am not waiting for agent data.",
       "datainput_complete": "Done for check in/out.",
-      "checkin_choosefirstletter": "Choose the letter that at the beginning of agent name of the agent want to check out.",
+      "checkout_choosefirstletter": "Choose the letter that at the beginning of agent name of the agent want to check out.",
       "checkout_chooseagent": "Choose the agent name of the agent want to check out.",
       "checkout_error_checkedout": "⚠️ Agent {agent} already checked out. Choose a different agent.",
       "checkout_error_notin": "⚠️ Agent {agent} does not checked-in."
