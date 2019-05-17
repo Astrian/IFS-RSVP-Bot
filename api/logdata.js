@@ -46,7 +46,7 @@ function getData(base, faction, location, operator) {
     base(location).select({
       view: "Grid view",
       filterByFormula: `AND({阵营} = '${faction}', NOT({正在登记经验值} = ''), {操作人} = ${operator})`
-    }).eachPage((records, fetchNextPage) => {
+    }).eachPage(async (records, fetchNextPage) => {
       records.forEach(function(record) {
         res({id: record.getId(), status: record.get('正在登记经验值'), apatin: record.get('入场初始经验'), agentname: record.get('特工代号')})
       })
