@@ -308,7 +308,10 @@ telegrafbot.on('callback_query', async (ctx) => {
 // recive AP/Level/trekker data
 telegrafbot.hears(new RegExp(/\d{1,2},\d{1,},\d{1,}/), async (ctx) => {
   try {
-    if (parseInt(ctx.message.text.split(',')[0]) > 16 || parseInt(ctx.message.text.split(',')[0]) < 1) throw await API.i18n("datainput_wronglevel", info)
+    if (parseInt(ctx.message.text.split(',')[0]) > 16 || parseInt(ctx.message.text.split(',')[0]) < 1) {
+      let error = await API.i18n("datainput_wronglevel", {})
+      throw error
+    }
     let info = await API.checkpoc(ctx.message.from.id)
     await API.logdata(info.faction, info.location, (ctx.message.text.split(','))[0], (ctx.message.text.split(','))[1], (ctx.message.text.split(','))[2], ctx.message.from.id)
     telegrambot.sendMessage(ctx.message.from.id, `签到/签退已完成。`, {parse_mode: "Markdown"})
