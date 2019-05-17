@@ -17,6 +17,7 @@ const telegrambot = new Telegram(process.env.TELEGRAM_TOKEN, {
   agent: null,
   webhookReply: true
 })
+debug(process.env.RANDOM_ADDRESS)
 expressApp.use(telegrafbot.webhookCallback(process.env.RANDOM_ADDRESS))
 telegrafbot.telegram.setWebhook(process.env.DOMAIN + process.env.RANDOM_ADDRESS)
 
