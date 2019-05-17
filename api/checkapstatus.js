@@ -13,19 +13,19 @@ module.exports = async function (faction, location, identity) {
 }
 
 function getData(base, faction, location, identity) {
-  new Promise((err, res) => {
+  return new Promise((rej, res) => {
     base(location).select({
       maxRecords: 1,
       view: "Grid view",
       filterByFormula: `AND (NOT ({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
-    }).eachPage(function page(records, fetchNextPage) {
+    }).eachPage((records, fetchNextPage) => {
       records.forEach(function(record) {
         res('ok')
         // console.log('Retrieved', record.get('特工代号'));
-      });
+      })
       res('ok')
-    }, function done(error) {
-      if (error) { err(error) }
-    });
+    }, done(error) => {
+      if (error) { rej(error) }
+    })
   })
 }
