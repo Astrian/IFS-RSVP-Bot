@@ -14,5 +14,5 @@ module.exports = async function (id) {
     }
     if (faction !== '') return { faction, location: ifs[i].location}
   }
-  throw i18n('not_allowed', {})
+  throw await i18n('not_allowed', {})
 }
