@@ -19,7 +19,7 @@
     "import_help": "Input agent names of the agents in the faction managed by you, with the format `/importrsvp+SPACE+agent names`. For example:\n```\n/importrsvp sampleagent1\nsampleagent2\nsampleagent3\n```\nTips: paste the agents list from FevGames is recommened. Remember to add a space after `/importrsvp` command before you paste the list.",
     "import_success": "Imported {counter} agent(s).",
     "help_title": "Do you need a hand? There are some helpful links.",
-    "help_wiki": "Go to knowldge base",
+    "help_wiki": "Go to knowledge base",
     "help_channel": "Follow bot update channel (Chinese-oriented)",
     "help_group": "Join feedback group",
     "help_translate": "Help us to translate the bot"
