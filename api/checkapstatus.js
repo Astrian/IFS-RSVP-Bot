@@ -16,7 +16,7 @@ module.exports = async function (base, faction, location, identity) {
 }
 
 function status(base, location, faction, identity) {
-  return new Promise((err, res) {
+  return new Promise((err, res) => {
     base(location).select({
       maxRecords: 1,
       view: "Grid view",
