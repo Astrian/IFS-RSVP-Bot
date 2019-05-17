@@ -25,6 +25,7 @@ function getData(base, faction, location, identity) {
       })
       res('ok')
     }, (error) => {
+      debug('error occured!')
       if (error) { rej(error) }
     })
   })
