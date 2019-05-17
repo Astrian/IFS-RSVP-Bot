@@ -2,6 +2,9 @@
 const Airtable = require('airtable');
 const debug = require('debug')('rsvpbot:importrsvp.js')
 
+// Import i18n function
+const i18n = require('./i18nparse')
+
 // Import RSVP base
 const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
 
@@ -23,5 +26,5 @@ module.exports = async function (faction, location, rsvplist) {
       counter++
     }
   }
-  return `有 ${counter} 位特工的 RSVP 信息成功被录入。`
+  return await i18n('import_success', {counter})
 }
