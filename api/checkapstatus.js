@@ -20,6 +20,6 @@ function status(location, faction, identity) {
       maxRecords: 1,
       view: "Grid view",
       filterByFormula: `AND(NOT({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
-    }).firstPage(result => res(result))
+    }).firstPage().then(result => res(result))
   })
 }
