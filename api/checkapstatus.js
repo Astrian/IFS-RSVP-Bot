@@ -8,7 +8,7 @@ const i18n = require('./i18nparse')
 module.exports = async function (faction, location, identity) {
   // Check AP log status
   debug('fetching infomation from airtable...')
-  let loggingstatus = await status(base, location, faction, identity)
+  let loggingstatus = await status(location, faction, identity)
   debug(loggingstatus)
 }
 
