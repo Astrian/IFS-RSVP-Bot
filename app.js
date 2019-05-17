@@ -7,6 +7,9 @@ const debug = require('debug')('rsvpbot:app.js')
 // Import APIs
 const API = require('./api')
 
+// Import i18n files
+const i18nparse = require("./i18nparse")
+
 // Generate express app, and get the port number
 const expressApp = express()
 const PORT = process.env.PORT || 5000
@@ -17,7 +20,6 @@ const telegrambot = new Telegram(process.env.TELEGRAM_TOKEN, {
   agent: null,
   webhookReply: true
 })
-debug(process.env.RANDOM_ADDRESS)
 expressApp.use(telegrafbot.webhookCallback(process.env.RANDOM_ADDRESS))
 telegrafbot.telegram.setWebhook(process.env.DOMAIN + process.env.RANDOM_ADDRESS)
 
@@ -26,6 +28,7 @@ telegrafbot.command('start', async (ctx) => {
   try {
     let info = await API.checkpoc(ctx.message.from.id)
     telegrambot.sendMessage(ctx.message.from.id, `欢迎你，${info.location} 场 ${info.faction} 签到人员。\n\n/importrsvp - 导入你所在阵营的特工\n/checkin - 进行签到\n/checkout - 进行签退\n/help - 寻求帮助`, {parse_mode: "Markdown"})
+    debug(await i18n("welcome_text", process.env.I18N || "en_us", ))
   } catch (err) {
     telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
   }

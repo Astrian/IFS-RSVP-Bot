@@ -21,6 +21,10 @@
     },
     "IFS_INFO": {
       "description": "你的 IFS 场次 JSON。"
+    },
+    "I18N": {
+      "description": "Bot 所使用语言。默认为 en_us",
+      "required": false
     }
   }
 }
