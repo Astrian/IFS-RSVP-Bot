@@ -4,13 +4,15 @@
     "checkin_choosefirstletter": "请选择签到 agent 的 ID 首字母。",
     "checkin_chooseagent": "请选择签到 agent。",
     "checkin_error_checkedin": "⚠️ 特工 {agent} 已经完成签到。请选择一个不同的特工。",
-    "checkin_logdata": "请在消息框中写上 agent {agent} 目前等级、AP 和步行距离数据，以半角逗号 `,` 区隔。\n例如：`16,40000000,2500`。大部分设备点击/长按示例可复制。"
+    "checkin_logdata": "请在消息框中写上 agent {agent} 目前等级、AP 和步行距离数据，以半角逗号 `,` 区隔。\n例如：`16,40000000,2500`。大部分设备点击/长按示例可复制。",
+    "datainput_wronglevel": "等级错误，尝试重新输入。"
   },
   "en_us": {
     "welcome_text": "Hello. You are {faction} organizer of {location} First Saturday.\n\n/importrsvp - Import the list of agents same as the faction you are managing\n/checkin - Check in an agent\n/checkout - Check out an agent\n/help - I need help",
     "checkin_choosefirstletter": "Choose the letter that at the beginning of agent name of the agent want to check in.",
     "checkin_chooseagent": "Choose the agent name of the agent want to check in.",
     "checkin_error_checkedin": "⚠️ Agent {agent} already checked in. Choose a different agent.",
-    "checkin_logdata": "Write down the level, AP and Trekker (“Distance walked” in agent profile) data of agent {agent} in the message text field, and send it to bot.\nSeparated with `,`, such as: `16,40000000,2500`. You can longpress or click the sample to copy it in most devices"
+    "checkin_logdata": "Write down the level, AP and Trekker (“Distance walked” in agent profile) data of agent {agent} in the message text field, and send it to me.\nSeparated with `,`, such as: `16,40000000,2500`. You can longpress or click the sample to copy it in most devices.",
+    "datainput_wronglevel": "You may write a wrong level. Maybe you can check your input, and try to send again."
   }
 }
