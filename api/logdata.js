@@ -59,7 +59,7 @@ function getData(base, faction, location, operator) {
       filterByFormula: `AND({阵营} = '${faction}', NOT({正在登记经验值} = ''), {操作人} = ${operator})`
     }).eachPage((records, fetchNextPage) => {
       records.forEach(function(record) {
-        res({id: record.get('id'), status: record.get('正在登记经验值')})
+        res({id: record.getId(), status: record.get('正在登记经验值')})
       })
       rej(`目前你还没有为任何一个 agent 进行签到。`)
     }, (error) => {
