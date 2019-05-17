@@ -9,8 +9,13 @@ module.exports = async function (faction, location, identity) {
   // Check AP log status
   debug('fetching infomation from airtable...')
   let loggingstatus = await status(location, faction, identity)
-  console.log(loggingstatus)
-  return
+  if (loggingstatus.length) {
+    loggingstatus.forEach(record => {
+      throw (await i18n("datainput_error_inputstatus", {agent: record.get('特工代号')}))
+    })
+  } else {
+    return
+  }
 }
 
 function status(location, faction, identity) {
