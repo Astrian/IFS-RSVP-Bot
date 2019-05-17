@@ -13,9 +13,8 @@ module.exports = async function (faction, location, identity) {
     let id = await getid(group)
     debug(id)
     throw 'aaa'
-  } else {
-    return
   }
+  return ''
 }
 
 function status(location, faction, identity) {
