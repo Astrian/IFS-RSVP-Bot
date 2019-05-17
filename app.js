@@ -110,14 +110,7 @@ telegrafbot.command('importrsvp', async (ctx) =>{
 
     // if user only send the '/importrsvp' command, reply the help infomation
     if (ctx.message.text.slice(12) === '') {
-      let reply = ''
-      reply += '请以 `/importrsvp+空格+RSVP 玩家列表` 的形式，来导入你所管理阵营的签到/签退特工。例如：\n'
-      reply += '```\n'
-      reply += '/importrsvp sampleagent1\n'
-      reply += 'sampleagent2\n'
-      reply += 'sampleagent3\n'
-      reply += '```\n'
-      reply += '小提示：直接从 FevGames 中复制特工列表并直接粘贴，效率更高噢，但请记得在指令后添加一个空格。'
+      let error = await API.i18n('import_help', {})
       throw reply
     }
 

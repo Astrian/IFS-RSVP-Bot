@@ -15,7 +15,8 @@
       "checkout_chooseagent": "请选择签退 agent。",
       "checkout_error_checkedout": "⚠️ 特工 {agent} 已经完成签退。请选择一个不同的特工。",
       "checkout_error_notin": "⚠️ 特工 {agent} 尚未进行签到，无法签退。",
-      "checkout_error_notenoughapearned": "{agent} 在活动期间的 AP 获取值不足 5000，无法进行登记。该特工的入场 AP 值为 {apvalue}。你可以尝试检查错误数据并重新登记，或使用 /cancelaprec 取消登记。"
+      "checkout_error_notenoughapearned": "{agent} 在活动期间的 AP 获取值不足 5000，无法进行登记。该特工的入场 AP 值为 {apvalue}。你可以尝试检查错误数据并重新登记，或使用 /cancelaprec 取消登记。",
+      "import_help": "请以 `/importrsvp+空格+RSVP 玩家列表` 的形式，来导入你所管理阵营的签到/签退特工。例如：\n```\n/importrsvp sampleagent1\nsampleagent2\nsampleagent3\n```\n小提示：直接从 FevGames 中复制特工列表并直接粘贴，效率更高噢，但请记得在指令后添加一个空格。"
     },
     "en_us": {
       "welcome_text": "Hello. You are {faction} organizer of {location} First Saturday.\n\n/importrsvp - Import the list of agents same as the faction you are managing\n/checkin - Check in an agent\n/checkout - Check out an agent\n/help - I need help",
@@ -32,7 +33,8 @@
       "checkout_chooseagent": "Choose the agent name of the agent want to check out.",
       "checkout_error_checkedout": "⚠️ Agent {agent} already checked out. Choose a different agent.",
       "checkout_error_notin": "⚠️ Agent {agent} does not checked-in.",
-      "checkout_error_notenoughapearned": "I can't check agent {agent} out, because the agent does not earned at least 5000 AP during event. The AP value logged at check-in action is {apvalue}. You may try fix the error and re-send new data to me, or send /cancelaprec to give up."
+      "checkout_error_notenoughapearned": "I can't check agent {agent} out, because the agent does not earned at least 5000 AP during event. The AP value logged at check-in action is {apvalue}. You may try fix the error and re-send new data to me, or send /cancelaprec to give up.",
+      "import_help": "Input agent names of the agents in the faction managed by you, with the format `/importrsvp+SPACE+agents name`. For example:\n```\n/importrsvp sampleagent1\nsampleagent2\nsampleagent3\n```\nTips: paste the agents list from FevGames is recommened. Remember to add a space after `/importrsvp` command before you paste the list."
     }
   }
 }
