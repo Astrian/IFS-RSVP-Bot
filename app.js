@@ -7,9 +7,6 @@ const debug = require('debug')('rsvpbot:app.js')
 // Import APIs
 const API = require('./api')
 
-// Import i18n files
-const i18nparse = require("./i18nparse")
-
 // Generate express app, and get the port number
 const expressApp = express()
 const PORT = process.env.PORT || 5000
