@@ -191,7 +191,7 @@ telegrafbot.on('callback_query', async (ctx) => {
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
           null,
-          `请选择签到 agent：`,
+          API.i18n("checkin_chooseagent", {}),
           {
             parse_mode: 'Markdown',
             reply_markup: {
