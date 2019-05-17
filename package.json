@@ -1,6 +1,6 @@
 {
   "name": "ifs-rsvp-bot",
-  "version": "0.3.2",
+  "version": "0.3.2.1",
   "description": "",
   "engines": {
     "node": "10.x"
