@@ -17,8 +17,8 @@ module.exports = async function (faction, location, identity) {
     filterByFormula: `AND(NOT({正在登记经验值} = ''), {阵营} = '${faction}', {操作人} = ${identity})`
   }).firstPage()
   debug('infomation fetched.')
-  loggingstatus.forEach(async record => {
-    let error = await i18n("datainput_error_inputstatus", {agent: record.get('特工代号')})
+  loggingstatus.forEach(record => {
+    let error = i18n("datainput_error_inputstatus", {agent: record.get('特工代号')})
     throw error
   })
   return
