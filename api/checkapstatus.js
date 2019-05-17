@@ -22,6 +22,6 @@ function getData(base, faction, location, identity) {
       records.forEach((record) => {
         res(record.get('特工代号'))
       })
-    }, error => if (err) { throw err; return; })
+    }, error => if (error) { err(error) })
   })
 }
