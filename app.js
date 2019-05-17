@@ -214,7 +214,7 @@ telegrafbot.on('callback_query', async (ctx) => {
           ctx.update.callback_query.from.id,
           ctx.update.callback_query.message.message_id,
           null,
-          await API.i18n("checkin_logdata", {}),
+          await API.i18n("checkin_logdata", {agent: (ctx.update.callback_query.data.split(':'))[1]}),
           {
             parse_mode: 'Markdown'
           }
