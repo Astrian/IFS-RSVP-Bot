@@ -1,0 +1,26 @@
+{
+  "botscript": {
+    "welcome_text": "Hello. You are {faction} organizer of {location} First Saturday.\n\n/importrsvp - Import the list of agents same as the faction you are managing\n/checkin - Check in an agent\n/checkout - Check out an agent\n/help - I need help",
+    "checkin_choosefirstletter": "Choose the letter that at the beginning of agent name of the agent want to check in.",
+    "checkin_chooseagent": "Choose the agent name of the agent want to check in.",
+    "checkin_error_checkedin": "⚠️ Agent {agent} already checked in. Choose a different agent.",
+    "checkin_logdata": "Write down the level, AP and Trekker (“Distance walked” in agent profile) data of agent {agent} in the message text field, and send it to me.\nSeparated with `,`, such as: `16,40000000,2500`. You can longpress or click the sample to copy it in most devices.",
+    "datainput_wronglevel": "You may write a wrong level. Maybe you can check your input, and try to send again.",
+    "datainput_error_inputstatus": "I am waiting for the data of agent {agent}. You may send it to me first, or send /cancelaprec to cancel it.",
+    "datainput_cancel": "Ok, I am not waiting for agent data.",
+    "datainput_complete": "Done for check in/out.",
+    "datainput_error_notlogging": "You are not logging data for any agents.",
+    "checkout_choosefirstletter": "Choose the letter that at the beginning of agent name of the agent want to check out.",
+    "checkout_chooseagent": "Choose the agent name of the agent want to check out.",
+    "checkout_error_checkedout": "⚠️ Agent {agent} already checked out. Choose a different agent.",
+    "checkout_error_notin": "⚠️ Agent {agent} does not checked-in.",
+    "checkout_error_notenoughapearned": "I can't check agent {agent} out, because the agent does not earned at least 5000 AP during event. The AP value logged at check-in action is {apvalue}. You may try fix the error and re-send new data to me, or send /cancelaprec to give up.",
+    "import_help": "Input agent names of the agents in the faction managed by you, with the format `/importrsvp+SPACE+agent names`. For example:\n```\n/importrsvp sampleagent1\nsampleagent2\nsampleagent3\n```\nTips: paste the agents list from FevGames is recommened. Remember to add a space after `/importrsvp` command before you paste the list.",
+    "import_success": "Imported {counter} agent(s).",
+    "help_title": "Do you need a hand? There are some helpful links.",
+    "help_wiki": "Go to knowldge base",
+    "help_channel": "Follow bot update channel (Chinese-oriented)",
+    "help_group": "Join feedback group",
+    "help_translate": "Help us to translate the bot"
+  }
+}
