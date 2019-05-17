@@ -6,5 +6,5 @@ const debug = require('debug')('rsvpbot:api/checkapstatus.js')
 const i18n = require('./i18nparse')
 
 module.exports = async function (faction, location, identity) {
-  return
+  throw 'error'
 }
