@@ -1,15 +1,13 @@
 // Import Airtable API and config
 const Airtable = require('airtable');
-const debug = require('debug')('rsvpbot:logaplevel.js')
+const debug = require('debug')('rsvpbot:api/logdata.js')
 
 // Import i18n function
 const i18n = require('./i18nparse')
 
-// Import RSVP base
-const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
-
 module.exports = async function (faction, location, level, ap, trekker, operator) {
-  debug(faction, location, level, ap, trekker, operator)
+  // Import RSVP base
+  const base = new Airtable({apiKey: process.env.AIRTABLE_TOKEN}).base(process.env.BASE_ID);
   // get agent record
   let agentsbase = await base(location).select({
     view: "Grid view",
@@ -17,7 +15,7 @@ module.exports = async function (faction, location, level, ap, trekker, operator
   }).firstPage()
   if (!agentsbase.length) throw `目前你还没有为任何一个 agent 进行签到。`
   let error = ''
-  await agentsbase.forEach(async record => {
+  let sth = await agentsbase.forEach(async record => {
     let data = {}
     debug('ap logging status = ' + record.get('正在登记经验值'))
     if (record.get('正在登记经验值') === 1) {
@@ -42,13 +40,34 @@ module.exports = async function (faction, location, level, ap, trekker, operator
     if (error !== '') {
       throw error
     } else {
-      await base(location).update(record.getId(), data, (err, res) => {
-        if (err) {
-          console.log(err)
-          throw `在输入数据过程中出现错误。${err}`
-        }
-        else return record.get('特工代号')
-      })
+
     }
+  })
+  debug(sth)
+
+  /* await base(location).update(id, data, (err, res) => {
+    if (err) {
+      console.log(err)
+      throw `在输入数据过程中出现错误。${err}`
+    }
+    else return record.get('特工代号')
+  }) */
+  return
+}
+
+function getData(base, faction, location, identity) {
+  return new Promise((res, rej) => {
+    base(location).select({
+      view: "Grid view",
+      filterByFormula: `AND({阵营} = '${faction}', NOT({正在登记经验值} = ''), {操作人} = ${operator})`
+    }).eachPage((records, fetchNextPage) => {
+      records.forEach(function(record) {
+        res({id: record.get('id'), status: record.get('正在登记经验值')})
+      })
+      rej(`目前你还没有为任何一个 agent 进行签到。`)
+    }, (error) => {
+      debug('error occured!')
+      if (error) { rej(error) }
+    })
   })
 }
