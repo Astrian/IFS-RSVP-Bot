@@ -2,6 +2,8 @@
 
 [![部署至 Heroku](https://img.shields.io/badge/Deploy-to%20Heroku-6762a6.svg?logo=heroku)](https://heroku.com/deploy) [![机器人更新频道](https://img.shields.io/badge/Channel-%40ifsrsvpbot-blue.svg?logo=telegram)](https://t.me/ifsrsvpbot) [![机器人反馈群](https://img.shields.io/badge/Group-Click_to_join-blue.svg?logo=telegram)](https://t.me/joinchat/A0P0mxHipaEeJ-4vzKgTuQ)
 
+<a href="https://www.buymeacoffee.com/Astrian" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
 ## 介绍 & 功能
 这是一款专用于 Ingress First Saturday 活动中 PoC 统计到场人员 RSVP、AP 与等级情况的 Telegram Bot。
 
