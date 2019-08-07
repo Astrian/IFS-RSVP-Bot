@@ -62,5 +62,5 @@ module.exports = {
       }
     }
   },
-  base: '/IFS-RSVP-Bot/'
+  base: '/'
 }
