@@ -1,7 +1,13 @@
 const debug = require('debug')('rsvpbot:api/checkpoc.js')
 
+// debug switch
+const godmode = require('../godmode.json')
+let env
+if (godmode.godmode) env = godmode.config
+else env = process.env
+
 module.exports = async function (id) {
-  let ifs = JSON.parse(process.env.IFS_INFO)
+  let ifs = JSON.parse(env.IFS_INFO)
   for (let i in ifs) {
     let faction = ''
     if (ifs[i].enlpoc.indexOf(id) !== -1) {
