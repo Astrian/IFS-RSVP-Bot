@@ -10,7 +10,9 @@ IFS RSVP Bot is optimized for deploy quickly. Just click “Deploy to Heroku”,
 
 ~~Want to find a topic you're interested? Look at the left of page please. Or you can browse Quick Deploy Guide first.~~
 
-**Edit:** These documents is being translated in English. We encourage you to find some help in our [official Telegram groupchat](https://t.me/joinchat/A0P0mxHipaEeJ-4vzKgTuQ), or view Chinese docs with Google Translate. :-P
+::: tip Incompleted Documents
+These documents are being translated in English, in the other word, the English docuements are incompleted. We encourage you to find some help in our [official Telegram groupchat](https://t.me/joinchat/A0P0mxHipaEeJ-4vzKgTuQ), or view Chinese docs with Google Translate. :-P
+:::
 
 ## Unexpected Problem
 If all documents can't solve your problem, or you find a unexpected problem in bot, you can call for help in [official Telegram groupchat](https://t.me/joinchat/A0P0mxHipaEeJ-4vzKgTuQ).

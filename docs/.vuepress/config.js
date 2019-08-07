@@ -51,7 +51,13 @@ module.exports = {
         selectText: 'Language',
         label: 'English',
         sidebar: [
-          ['/en-us/', 'Welcome']
+          ['/en-us/', 'Welcome'],
+          {
+            title: 'How-to For Everyone',
+            children: [
+              ['/en-us/QuickDeployGuide', 'Quick Deploy Guide']
+            ]
+          },
         ]
       }
     }

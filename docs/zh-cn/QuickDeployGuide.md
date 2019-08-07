@@ -15,7 +15,11 @@
 
 ![复制 Base](https://i.imgur.com/puxE12J.png)
 
-进入你刚才复制的 Base 中。给表格改个名字，改成 IFS 所在地区的名字。如果你所在城市有多场 IFS，请参阅 [这篇指南](/zh-cn/MultipleIfs)。
+进入你刚才复制的 Base 中。给表格改个名字，改成 IFS 所在地区的名字。
+
+::: tip 另请关注
+如果你所在城市有多场 IFS，请参阅 [这篇指南](/zh-cn/MultipleIfs)。
+:::
 
 ![改名字](https://i.imgur.com/lxpozq6.png)
 
