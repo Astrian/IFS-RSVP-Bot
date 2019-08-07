@@ -2,7 +2,7 @@
 
 [![部署至 Heroku](https://img.shields.io/badge/Deploy-to%20Heroku-6762a6.svg?logo=heroku)](https://heroku.com/deploy) [![机器人更新频道](https://img.shields.io/badge/Channel-%40ifsrsvpbot-blue.svg?logo=telegram)](https://t.me/ifsrsvpbot) [![机器人反馈群](https://img.shields.io/badge/Group-Click_to_join-blue.svg?logo=telegram)](https://t.me/joinchat/A0P0mxHipaEeJ-4vzKgTuQ)
 
-<a href="https://www.buymeacoffee.com/Astrian" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+[![](https://img.shields.io/badge/Buy%20me%20a-Coffee-yellow)](https://www.buymeacoffee.com/Astrian)
 
 ## 介绍 & 功能
 这是一款专用于 Ingress First Saturday 活动中 PoC 统计到场人员 RSVP、AP 与等级情况的 Telegram Bot。
@@ -22,7 +22,7 @@
 
 [![部署至 Heroku](https://img.shields.io/badge/Deploy-to%20Heroku-6762a6.svg?logo=heroku)](https://heroku.com/deploy)
 
-有关快速部署的详细说明，敬请参阅「[快速部署指南](/zh-cn/QuickDeployGuide)」。如果你需要对 bot 进行定制化修改，敬请参阅「[高级部署指南](/zh-cn/AdvancedDeployGuide)」。
+有关快速部署的详细说明，敬请参阅「[快速部署指南](https://ifs-rsvp-bot.joincygress.com/zh-cn/QuickDeployGuide.html)」。如果你需要对 bot 进行定制化修改，敬请参阅「[高级部署指南](https://ifs-rsvp-bot.joincygress.com/zh-cn/AdvancedDeployGuide.html)」。
 
 ## TODO
 
