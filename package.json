@@ -7,7 +7,9 @@
   },
   "main": "app.js",
   "scripts": {
-    "debug": "export DEBUG=rsvpbot* && node debug.js"
+    "debug": "export DEBUG=rsvpbot* && node debug.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,8 @@
     "debug": "^4.1.1",
     "express": "^4.16.4",
     "telegraf": "^3.30.1"
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.3"
   }
 }

@@ -7,19 +7,25 @@ const debug = require('debug')('rsvpbot:app.js')
 // Import APIs
 const API = require('./api')
 
+// debug switch
+const godmode = require('./godmode.json')
+let env
+if (godmode.godmode) env = godmode.config
+else env = process.env
+
 // Generate express app, and get the port number
 const expressApp = express()
-const PORT = process.env.PORT || 5000
+const PORT = env.PORT || 5000
 
 // Initial Telegram bot
-const telegrafbot = new Telegraf(process.env.TELEGRAM_TOKEN)
-const telegrambot = new Telegram(process.env.TELEGRAM_TOKEN, {
+const telegrafbot = new Telegraf(env.TELEGRAM_TOKEN)
+const telegrambot = new Telegram(env.TELEGRAM_TOKEN, {
   agent: null,
   webhookReply: true
 })
-debug(process.env.RANDOM_ADDRESS)
-expressApp.use(telegrafbot.webhookCallback(process.env.RANDOM_ADDRESS))
-telegrafbot.telegram.setWebhook(process.env.DOMAIN + process.env.RANDOM_ADDRESS)
+debug(env.RANDOM_ADDRESS)
+expressApp.use(telegrafbot.webhookCallback(env.RANDOM_ADDRESS))
+telegrafbot.telegram.setWebhook(env.DOMAIN + env.RANDOM_ADDRESS)
 
 // Bot commands
 telegrafbot.command('start', async (ctx) => {
@@ -130,6 +136,18 @@ telegrafbot.command('importrsvp', async (ctx) =>{
 
     // output list result
     telegrambot.sendMessage(ctx.message.from.id, recinfo, {parse_mode: "Markdown"})
+  } catch (err) {
+    console.log('error accourd!')
+    console.log(err)
+    telegrambot.sendMessage(ctx.message.from.id, err, {parse_mode: "Markdown"})
+  }
+})
+telegrafbot.command('status', async (ctx) => {
+  try {
+    let info = await API.checkpoc(ctx.message.from.id)
+
+    let status = await API.status(info.faction)
+    telegrambot.sendMessage(ctx.message.from.id, status, {parse_mode: "Markdown"})
   } catch (err) {
     console.log('error accourd!')
     console.log(err)
