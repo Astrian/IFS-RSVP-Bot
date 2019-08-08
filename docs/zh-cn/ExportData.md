@@ -6,10 +6,13 @@ First Saturday 终于结束！接下来，FevGames 和 Niantic 会要求双方 P
 ## 导出 CSV
 在 Airtable 的总表格（一般为 Grid View）中，点击工具栏最右侧的「...」按钮，就可以找到「Download CSV」的选项。
 
-> **注意！** 此选项在手机浏览器并不工作。请尝试在电脑中导出 CSV。
+::: warning 我一时间用不了电脑，可以在手机上打开这个页面吗？
+不能。此选项在手机浏览器并不工作。请尝试在电脑中导出 CSV。
+:::
 
 ![导出选项](https://i.imgur.com/YmUXYs8.png)
 
+## 在数算表软件打开并复制数据
 [CSV](https://zh.wikipedia.org/wiki/%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%80%BC) 通常可以被大多数 Spreadsheet（数算表）app（例如 Microsoft Excel、WPS 表格、 Numbers 表格或 Google Sheets）所打开。此处我们以 Microsoft Excel 为例进行说明。
 
 尝试使用 Microsoft Excel 打开，就可以看到一个完整的表格。
@@ -22,6 +25,7 @@ First Saturday 终于结束！接下来，FevGames 和 Niantic 会要求双方 P
 
 ![复制数据](https://i.imgur.com/h5I4h5v.png)
 
+## 提交数据
 接下来，回到官方提交表格的页面。选中某个阵营部分表格 *除表头外* 的最左上角一格，右键点击，在弹出的菜单中选择「选择性粘贴 - 仅粘贴值」（*不是* 下图中的「仅粘贴格式」哦）。
 
 ![仅粘贴格式](https://i.imgur.com/pZm4KqA.png)
