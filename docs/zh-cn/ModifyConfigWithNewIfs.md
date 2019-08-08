@@ -4,7 +4,9 @@
 ## 复制 Base
 和 [快速部署指南](/zh-cn/QuickDeployGuide) 中的方法一样，直接使用「Duplicate base」来复制之前用过的 base。所在城市有多场 IFS，也可以根据 [这篇指南](/zh-cn/MultipleIfs) 配置多场 IFS 的表格。
 
-> **注意！** 务必取消选中「Duplicate records」选项，以便于导入新的 RSVP 名单。
+::: tip Duplicate records 复选框是什么意思？
+它的意思是在复制 Base 的时候同时复制 Base 内的数据，但我们只需要复制 Base 内的表格结构而已。请记住将它取消选中，以便重新导入新的数据。
+:::
 
 ## 修改环境变量
 ### 通过「Deploy to Heroku」部署

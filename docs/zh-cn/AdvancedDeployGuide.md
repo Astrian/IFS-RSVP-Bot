@@ -15,7 +15,9 @@
 2. 使用 `npm install` 来安装依赖
 3. 使用 `node app.js` 或 `pm2 start app.js`（若你安装了 pm2）来启动 bot 程序
 
-注意，如果你 fork 并修改了代码，在第一步时，请将后面的地址改为 fork 后的 repo 地址。
+::: warning 如果我 fork 并修改了代码
+在第一步，请将后面的仓库地址改为 fork 后的 repo 地址。
+:::
 
 配置环境变量。你需要配置这些变量：
 
