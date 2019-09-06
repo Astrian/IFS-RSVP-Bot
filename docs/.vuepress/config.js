@@ -60,6 +60,10 @@ module.exports = {
           },
         ]
       }
+    },
+    algolia: {
+      apiKey: '740bcebdb87362934cffd9dd2deb2c6c',
+      indexName: 'ifs-rsvp-bot'
     }
   },
   base: '/',
