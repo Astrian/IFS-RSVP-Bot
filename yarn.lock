@@ -994,11 +994,11 @@ agentkeepalive@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/agentkeepalive/-/agentkeepalive-2.2.0.tgz#c5d1bd4b129008f1163f236f86e5faea2026e2ef"
 
-airtable@^0.5.10:
-  version "0.5.10"
-  resolved "https://registry.yarnpkg.com/airtable/-/airtable-0.5.10.tgz#89ea398393fac46f04a1ea810b97bfcf6bf07012"
+airtable@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/airtable/-/airtable-0.7.1.tgz#1ebad9c9ed332d9348fb3ec3ef9c2d8be452b4f4"
   dependencies:
-    lodash "4.17.11"
+    lodash "4.17.14"
     request "2.88.0"
     xhr "2.3.3"
 
@@ -2493,7 +2493,7 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-express@^4.16.4, express@^4.17.1:
+express@^4.17.1:
   version "4.17.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   dependencies:
@@ -3684,9 +3684,9 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.17.11:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+lodash@4.17.14:
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
 
 lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.3, lodash@^4.17.5:
   version "4.17.15"
@@ -5735,7 +5735,7 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
 
-telegraf@^3.30.1:
+telegraf@^3.32.0:
   version "3.32.0"
   resolved "https://registry.yarnpkg.com/telegraf/-/telegraf-3.32.0.tgz#70ec304b9c8645f8988924ebe90e5c00ee46ddbb"
   dependencies:

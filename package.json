@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/Astrian/IFS-RSVP-Bot#readme",
   "dependencies": {
-    "airtable": "^0.5.10",
+    "airtable": "^0.7.1",
     "debug": "^4.1.1",
-    "express": "^4.16.4",
-    "telegraf": "^3.30.1"
+    "express": "^4.17.1",
+    "telegraf": "^3.32.0"
   },
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.0.0-rc.1",
