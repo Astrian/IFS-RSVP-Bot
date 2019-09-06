@@ -8,9 +8,7 @@ const debug = require('debug')('rsvpbot:app.js')
 const API = require('./api')
 
 // debug switch
-const godmode = {
-  "godmode": false
-}
+const godmode = require('./godmode.json')
 let env
 if (godmode.godmode) env = godmode.config
 else env = process.env
