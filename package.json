@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/Astrian/IFS-RSVP-Bot#readme",
   "dependencies": {
-    "airtable": "^0.7.1",
+    "airtable": "^0.7.2",
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "telegraf": "^3.32.0"
